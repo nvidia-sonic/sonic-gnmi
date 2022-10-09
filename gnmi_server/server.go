@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"os"
 	"github.com/Azure/sonic-mgmt-common/translib"
 	"github.com/sonic-net/sonic-gnmi/common_utils"
 	spb "github.com/sonic-net/sonic-gnmi/proto"
@@ -50,6 +51,7 @@ type Config struct {
 	LogLevel int
 	UserAuth AuthTypes
 	EnableTranslibWrite bool
+	EnableNativeWrite bool
 }
 
 var AuthLock sync.Mutex
@@ -124,6 +126,10 @@ func NewServer(config *Config, opts []grpc.ServerOption) (*Server, error) {
 		return nil, errors.New("config not provided")
 	}
 
+	if config.EnableNativeWrite {
+		os.RemoveAll(common_utils.GNMI_WORK_PATH)
+		os.MkdirAll(common_utils.GNMI_WORK_PATH, 0777)
+	}
 	common_utils.InitCounters()
 
 	s := grpc.NewServer(opts...)
@@ -144,8 +150,10 @@ func NewServer(config *Config, opts []grpc.ServerOption) (*Server, error) {
 	}
 	gnmipb.RegisterGNMIServer(srv.s, srv)
 	spb_jwt_gnoi.RegisterSonicJwtServiceServer(srv.s, srv)
-	if srv.config.EnableTranslibWrite {
+	if srv.config.EnableTranslibWrite || srv.config.EnableNativeWrite {
 		gnoi_system_pb.RegisterSystemServer(srv.s, srv)
+	}
+	if srv.config.EnableTranslibWrite {		
 		spb_gnoi.RegisterSonicServiceServer(srv.s, srv)
 	}
 	log.V(1).Infof("Created Server on %s, read-only: %t", srv.Address(), !srv.config.EnableTranslibWrite)
@@ -315,6 +323,8 @@ func (s *Server) Get(ctx context.Context, req *gnmipb.GetRequest) (*gnmipb.GetRe
 
 	if target == "OTHERS" {
 		dc, err = sdc.NewNonDbClient(paths, prefix)
+	} else if target == "MIXED" {
+		dc, err = sdc.NewMixedDbClient(paths, prefix)
 	} else if _, ok, _, _ := sdc.IsTargetDb(target); ok {
 		dc, err = sdc.NewDbClient(paths, prefix)
 	} else {
@@ -350,6 +360,10 @@ func (s *Server) Get(ctx context.Context, req *gnmipb.GetRequest) (*gnmipb.GetRe
 
 func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetResponse, error) {
 	common_utils.IncCounter("GNMI set")
+	if s.config.EnableTranslibWrite == false && s.config.EnableNativeWrite == false {
+		common_utils.IncCounter("GNMI set fail")
+		return nil, grpc.Errorf(codes.Unimplemented, "GNMI is in read-only mode")
+	}
 	ctx, err := authenticate(s.config.UserAuth, ctx)
 	if err != nil {
 		common_utils.IncCounter("GNMI set fail")
@@ -359,9 +373,42 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 
 	/* Fetch the prefix. */
 	prefix := req.GetPrefix()
+	var target string
+	if prefix == nil {
+		common_utils.IncCounter("GNMI set fail")
+		return nil, status.Error(codes.Unimplemented, "No target specified in prefix")
+	} else {
+		target = prefix.GetTarget()
+	}
 	extensions := req.GetExtension()
-	/* Create Transl client. */
-	dc, _ := sdc.NewTranslClient(prefix, nil, ctx, extensions)
+
+	var dc sdc.Client
+	if target == "MIXED" {
+		if s.config.EnableNativeWrite == false {
+			common_utils.IncCounter("GNMI set fail")
+			return nil, grpc.Errorf(codes.Unimplemented, "Mixed schema is disabled")
+		}
+		paths := req.GetDelete()
+		for _, path := range req.GetReplace() {
+			paths = append(paths, path.GetPath())
+		}
+		for _, path := range req.GetUpdate() {
+			paths = append(paths, path.GetPath())
+		}
+		dc, err = sdc.NewMixedDbClient(paths, prefix)
+	} else {
+		if s.config.EnableTranslibWrite == false {
+			common_utils.IncCounter("GNMI set fail")
+			return nil, grpc.Errorf(codes.Unimplemented, "Telemetry is in read-only mode")
+		}
+		/* Create Transl client. */
+		dc, err = sdc.NewTranslClient(prefix, nil, ctx, extensions)
+	}
+
+	if err != nil {
+		common_utils.IncCounter("GNMI set fail")
+		return nil, status.Error(codes.NotFound, err.Error())
+	}
 
 	/* DELETE */
 	for _, path := range req.GetDelete() {
@@ -400,16 +447,10 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 		/* Add to Set response results. */
 		results = append(results, &res)
 	}
-	if s.config.EnableTranslibWrite {
-		err = dc.Set(req.GetDelete(), req.GetReplace(), req.GetUpdate())
-		if err != nil {
-			common_utils.IncCounter("GNMI set fail")
-		}
-	} else {
+	err = dc.Set(req.GetDelete(), req.GetReplace(), req.GetUpdate())
+	if err != nil {
 		common_utils.IncCounter("GNMI set fail")
-		return nil, grpc.Errorf(codes.Unimplemented, "Telemetry is in read-only mode")
 	}
-
 
 	return &gnmipb.SetResponse{
 		Prefix:   req.GetPrefix(),
@@ -424,10 +465,14 @@ func (s *Server) Capabilities(ctx context.Context, req *gnmipb.CapabilityRequest
 		return nil, err
 	}
 	extensions := req.GetExtension()
-	dc, _ := sdc.NewTranslClient(nil, nil, ctx, extensions)
 
 	/* Fetch the client capabitlities. */
-	supportedModels := dc.Capabilities()
+	var supportedModels []gnmipb.ModelData
+	dc, _ := sdc.NewTranslClient(nil, nil, ctx, extensions)
+	supportedModels = append(supportedModels, dc.Capabilities()...)
+	dc, _ = sdc.NewMixedDbClient(nil, nil)
+	supportedModels = append(supportedModels, dc.Capabilities()...)
+
 	suppModels := make([]*gnmipb.ModelData, len(supportedModels))
 
 	for index, model := range supportedModels {

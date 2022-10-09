@@ -41,6 +41,15 @@ var CountersName = [...]string {
 	"GNMI get fail",
 	"GNMI set",
 	"GNMI set fail",
+	"GNOI reboot",
+	"DBUS",
+	"DBUS fail",
+	"DBUS apply patch db",
+	"DBUS apply patch yang",
+	"DBUS create checkpoint",
+	"DBUS delete checkpoint",
+	"DBUS config save",
+	"DBUS config reload",
 }
 
 var globalCounters [len(CountersName)]uint64
