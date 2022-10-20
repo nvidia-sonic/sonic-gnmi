@@ -49,6 +49,7 @@ $(GO_DEPS): go.mod $(PATCHES)
 	patch -d vendor -p0 < patches/gnmi_set.patch
 	patch -d vendor -p0 < patches/gnmi_get.patch
 	patch -d vendor -p0 < patches/gnmi_path.patch
+	patch -d vendor -p0 < patches/gnmi_xpath.patch
 	touch $@
 
 go-deps: $(GO_DEPS)
