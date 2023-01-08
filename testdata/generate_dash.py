@@ -48,8 +48,8 @@ def main():
         output = generate_mapping(args.num)
     else:
         raise Exception("Invalid table %s"%args.table)
-    
-    print(json.dumps(output))
+
+    print(json.dumps(output, indent=4))
 
 if __name__ == '__main__':
     main()

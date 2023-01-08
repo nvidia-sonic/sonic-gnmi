@@ -1,0 +1,5002 @@
+{
+    "Vnet0000000:10.0.50.2": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000001:10.0.50.3": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000002:10.0.50.4": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000003:10.0.50.5": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000004:10.0.50.6": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000005:10.0.50.7": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000006:10.0.50.8": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000007:10.0.50.9": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000008:10.0.50.10": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000009:10.0.50.11": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000010:10.0.50.12": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000011:10.0.50.13": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000012:10.0.50.14": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000013:10.0.50.15": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000014:10.0.50.16": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000015:10.0.50.17": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000016:10.0.50.18": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000017:10.0.50.19": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000018:10.0.50.20": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000019:10.0.50.21": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000020:10.0.50.22": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000021:10.0.50.23": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000022:10.0.50.24": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000023:10.0.50.25": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000024:10.0.50.26": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000025:10.0.50.27": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000026:10.0.50.28": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000027:10.0.50.29": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000028:10.0.50.30": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000029:10.0.50.31": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000030:10.0.50.32": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000031:10.0.50.33": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000032:10.0.50.34": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000033:10.0.50.35": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000034:10.0.50.36": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000035:10.0.50.37": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000036:10.0.50.38": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000037:10.0.50.39": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000038:10.0.50.40": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000039:10.0.50.41": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000040:10.0.50.42": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000041:10.0.50.43": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000042:10.0.50.44": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000043:10.0.50.45": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000044:10.0.50.46": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000045:10.0.50.47": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000046:10.0.50.48": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000047:10.0.50.49": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000048:10.0.50.50": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000049:10.0.50.51": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000050:10.0.50.52": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000051:10.0.50.53": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000052:10.0.50.54": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000053:10.0.50.55": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000054:10.0.50.56": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000055:10.0.50.57": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000056:10.0.50.58": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000057:10.0.50.59": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000058:10.0.50.60": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000059:10.0.50.61": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000060:10.0.50.62": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000061:10.0.50.63": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000062:10.0.50.64": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000063:10.0.50.65": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000064:10.0.50.66": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000065:10.0.50.67": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000066:10.0.50.68": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000067:10.0.50.69": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000068:10.0.50.70": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000069:10.0.50.71": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000070:10.0.50.72": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000071:10.0.50.73": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000072:10.0.50.74": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000073:10.0.50.75": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000074:10.0.50.76": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000075:10.0.50.77": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000076:10.0.50.78": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000077:10.0.50.79": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000078:10.0.50.80": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000079:10.0.50.81": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000080:10.0.50.82": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000081:10.0.50.83": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000082:10.0.50.84": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000083:10.0.50.85": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000084:10.0.50.86": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000085:10.0.50.87": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000086:10.0.50.88": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000087:10.0.50.89": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000088:10.0.50.90": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000089:10.0.50.91": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000090:10.0.50.92": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000091:10.0.50.93": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000092:10.0.50.94": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000093:10.0.50.95": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000094:10.0.50.96": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000095:10.0.50.97": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000096:10.0.50.98": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000097:10.0.50.99": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000098:10.0.50.100": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000099:10.0.50.101": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000100:10.0.50.102": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000101:10.0.50.103": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000102:10.0.50.104": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000103:10.0.50.105": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000104:10.0.50.106": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000105:10.0.50.107": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000106:10.0.50.108": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000107:10.0.50.109": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000108:10.0.50.110": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000109:10.0.50.111": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000110:10.0.50.112": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000111:10.0.50.113": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000112:10.0.50.114": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000113:10.0.50.115": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000114:10.0.50.116": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000115:10.0.50.117": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000116:10.0.50.118": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000117:10.0.50.119": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000118:10.0.50.120": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000119:10.0.50.121": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000120:10.0.50.122": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000121:10.0.50.123": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000122:10.0.50.124": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000123:10.0.50.125": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000124:10.0.50.126": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000125:10.0.50.127": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000126:10.0.50.128": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000127:10.0.50.129": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000128:10.0.50.130": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000129:10.0.50.131": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000130:10.0.50.132": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000131:10.0.50.133": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000132:10.0.50.134": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000133:10.0.50.135": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000134:10.0.50.136": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000135:10.0.50.137": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000136:10.0.50.138": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000137:10.0.50.139": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000138:10.0.50.140": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000139:10.0.50.141": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000140:10.0.50.142": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000141:10.0.50.143": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000142:10.0.50.144": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000143:10.0.50.145": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000144:10.0.50.146": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000145:10.0.50.147": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000146:10.0.50.148": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000147:10.0.50.149": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000148:10.0.50.150": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000149:10.0.50.151": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000150:10.0.50.152": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000151:10.0.50.153": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000152:10.0.50.154": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000153:10.0.50.155": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000154:10.0.50.156": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000155:10.0.50.157": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000156:10.0.50.158": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000157:10.0.50.159": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000158:10.0.50.160": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000159:10.0.50.161": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000160:10.0.50.162": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000161:10.0.50.163": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000162:10.0.50.164": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000163:10.0.50.165": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000164:10.0.50.166": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000165:10.0.50.167": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000166:10.0.50.168": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000167:10.0.50.169": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000168:10.0.50.170": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000169:10.0.50.171": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000170:10.0.50.172": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000171:10.0.50.173": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000172:10.0.50.174": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000173:10.0.50.175": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000174:10.0.50.176": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000175:10.0.50.177": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000176:10.0.50.178": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000177:10.0.50.179": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000178:10.0.50.180": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000179:10.0.50.181": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000180:10.0.50.182": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000181:10.0.50.183": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000182:10.0.50.184": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000183:10.0.50.185": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000184:10.0.50.186": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000185:10.0.50.187": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000186:10.0.50.188": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000187:10.0.50.189": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000188:10.0.50.190": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000189:10.0.50.191": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000190:10.0.50.192": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000191:10.0.50.193": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000192:10.0.50.194": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000193:10.0.50.195": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000194:10.0.50.196": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000195:10.0.50.197": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000196:10.0.50.198": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000197:10.0.50.199": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000198:10.0.50.200": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000199:10.0.50.201": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000200:10.0.50.202": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000201:10.0.50.203": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000202:10.0.50.204": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000203:10.0.50.205": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000204:10.0.50.206": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000205:10.0.50.207": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000206:10.0.50.208": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000207:10.0.50.209": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000208:10.0.50.210": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000209:10.0.50.211": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000210:10.0.50.212": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000211:10.0.50.213": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000212:10.0.50.214": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000213:10.0.50.215": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000214:10.0.50.216": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000215:10.0.50.217": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000216:10.0.50.218": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000217:10.0.50.219": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000218:10.0.50.220": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000219:10.0.50.221": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000220:10.0.50.222": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000221:10.0.50.223": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000222:10.0.50.224": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000223:10.0.50.225": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000224:10.0.50.226": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000225:10.0.50.227": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000226:10.0.50.228": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000227:10.0.50.229": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000228:10.0.50.230": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000229:10.0.50.231": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000230:10.0.50.232": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000231:10.0.50.233": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000232:10.0.50.234": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000233:10.0.50.235": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000234:10.0.50.236": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000235:10.0.50.237": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000236:10.0.50.238": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000237:10.0.50.239": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000238:10.0.50.240": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000239:10.0.50.241": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000240:10.0.50.242": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000241:10.0.50.243": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000242:10.0.50.244": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000243:10.0.50.245": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000244:10.0.50.246": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000245:10.0.50.247": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000246:10.0.50.248": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000247:10.0.50.249": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000248:10.0.50.250": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000249:10.0.50.251": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000250:10.0.50.252": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000251:10.0.50.253": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000252:10.0.50.254": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000253:10.0.50.255": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000254:10.0.51.0": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000255:10.0.51.1": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000256:10.0.51.2": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000257:10.0.51.3": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000258:10.0.51.4": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000259:10.0.51.5": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000260:10.0.51.6": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000261:10.0.51.7": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000262:10.0.51.8": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000263:10.0.51.9": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000264:10.0.51.10": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000265:10.0.51.11": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000266:10.0.51.12": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000267:10.0.51.13": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000268:10.0.51.14": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000269:10.0.51.15": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000270:10.0.51.16": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000271:10.0.51.17": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000272:10.0.51.18": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000273:10.0.51.19": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000274:10.0.51.20": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000275:10.0.51.21": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000276:10.0.51.22": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000277:10.0.51.23": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000278:10.0.51.24": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000279:10.0.51.25": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000280:10.0.51.26": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000281:10.0.51.27": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000282:10.0.51.28": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000283:10.0.51.29": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000284:10.0.51.30": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000285:10.0.51.31": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000286:10.0.51.32": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000287:10.0.51.33": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000288:10.0.51.34": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000289:10.0.51.35": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000290:10.0.51.36": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000291:10.0.51.37": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000292:10.0.51.38": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000293:10.0.51.39": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000294:10.0.51.40": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000295:10.0.51.41": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000296:10.0.51.42": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000297:10.0.51.43": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000298:10.0.51.44": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000299:10.0.51.45": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000300:10.0.51.46": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000301:10.0.51.47": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000302:10.0.51.48": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000303:10.0.51.49": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000304:10.0.51.50": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000305:10.0.51.51": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000306:10.0.51.52": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000307:10.0.51.53": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000308:10.0.51.54": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000309:10.0.51.55": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000310:10.0.51.56": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000311:10.0.51.57": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000312:10.0.51.58": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000313:10.0.51.59": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000314:10.0.51.60": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000315:10.0.51.61": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000316:10.0.51.62": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000317:10.0.51.63": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000318:10.0.51.64": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000319:10.0.51.65": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000320:10.0.51.66": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000321:10.0.51.67": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000322:10.0.51.68": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000323:10.0.51.69": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000324:10.0.51.70": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000325:10.0.51.71": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000326:10.0.51.72": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000327:10.0.51.73": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000328:10.0.51.74": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000329:10.0.51.75": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000330:10.0.51.76": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000331:10.0.51.77": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000332:10.0.51.78": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000333:10.0.51.79": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000334:10.0.51.80": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000335:10.0.51.81": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000336:10.0.51.82": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000337:10.0.51.83": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000338:10.0.51.84": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000339:10.0.51.85": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000340:10.0.51.86": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000341:10.0.51.87": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000342:10.0.51.88": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000343:10.0.51.89": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000344:10.0.51.90": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000345:10.0.51.91": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000346:10.0.51.92": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000347:10.0.51.93": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000348:10.0.51.94": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000349:10.0.51.95": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000350:10.0.51.96": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000351:10.0.51.97": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000352:10.0.51.98": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000353:10.0.51.99": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000354:10.0.51.100": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000355:10.0.51.101": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000356:10.0.51.102": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000357:10.0.51.103": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000358:10.0.51.104": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000359:10.0.51.105": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000360:10.0.51.106": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000361:10.0.51.107": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000362:10.0.51.108": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000363:10.0.51.109": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000364:10.0.51.110": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000365:10.0.51.111": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000366:10.0.51.112": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000367:10.0.51.113": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000368:10.0.51.114": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000369:10.0.51.115": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000370:10.0.51.116": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000371:10.0.51.117": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000372:10.0.51.118": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000373:10.0.51.119": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000374:10.0.51.120": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000375:10.0.51.121": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000376:10.0.51.122": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000377:10.0.51.123": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000378:10.0.51.124": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000379:10.0.51.125": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000380:10.0.51.126": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000381:10.0.51.127": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000382:10.0.51.128": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000383:10.0.51.129": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000384:10.0.51.130": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000385:10.0.51.131": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000386:10.0.51.132": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000387:10.0.51.133": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000388:10.0.51.134": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000389:10.0.51.135": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000390:10.0.51.136": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000391:10.0.51.137": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000392:10.0.51.138": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000393:10.0.51.139": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000394:10.0.51.140": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000395:10.0.51.141": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000396:10.0.51.142": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000397:10.0.51.143": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000398:10.0.51.144": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000399:10.0.51.145": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000400:10.0.51.146": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000401:10.0.51.147": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000402:10.0.51.148": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000403:10.0.51.149": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000404:10.0.51.150": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000405:10.0.51.151": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000406:10.0.51.152": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000407:10.0.51.153": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000408:10.0.51.154": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000409:10.0.51.155": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000410:10.0.51.156": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000411:10.0.51.157": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000412:10.0.51.158": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000413:10.0.51.159": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000414:10.0.51.160": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000415:10.0.51.161": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000416:10.0.51.162": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000417:10.0.51.163": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000418:10.0.51.164": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000419:10.0.51.165": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000420:10.0.51.166": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000421:10.0.51.167": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000422:10.0.51.168": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000423:10.0.51.169": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000424:10.0.51.170": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000425:10.0.51.171": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000426:10.0.51.172": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000427:10.0.51.173": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000428:10.0.51.174": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000429:10.0.51.175": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000430:10.0.51.176": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000431:10.0.51.177": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000432:10.0.51.178": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000433:10.0.51.179": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000434:10.0.51.180": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000435:10.0.51.181": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000436:10.0.51.182": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000437:10.0.51.183": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000438:10.0.51.184": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000439:10.0.51.185": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000440:10.0.51.186": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000441:10.0.51.187": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000442:10.0.51.188": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000443:10.0.51.189": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000444:10.0.51.190": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000445:10.0.51.191": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000446:10.0.51.192": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000447:10.0.51.193": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000448:10.0.51.194": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000449:10.0.51.195": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000450:10.0.51.196": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000451:10.0.51.197": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000452:10.0.51.198": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000453:10.0.51.199": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000454:10.0.51.200": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000455:10.0.51.201": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000456:10.0.51.202": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000457:10.0.51.203": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000458:10.0.51.204": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000459:10.0.51.205": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000460:10.0.51.206": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000461:10.0.51.207": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000462:10.0.51.208": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000463:10.0.51.209": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000464:10.0.51.210": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000465:10.0.51.211": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000466:10.0.51.212": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000467:10.0.51.213": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000468:10.0.51.214": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000469:10.0.51.215": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000470:10.0.51.216": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000471:10.0.51.217": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000472:10.0.51.218": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000473:10.0.51.219": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000474:10.0.51.220": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000475:10.0.51.221": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000476:10.0.51.222": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000477:10.0.51.223": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000478:10.0.51.224": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000479:10.0.51.225": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000480:10.0.51.226": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000481:10.0.51.227": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000482:10.0.51.228": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000483:10.0.51.229": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000484:10.0.51.230": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000485:10.0.51.231": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000486:10.0.51.232": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000487:10.0.51.233": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000488:10.0.51.234": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000489:10.0.51.235": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000490:10.0.51.236": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000491:10.0.51.237": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000492:10.0.51.238": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000493:10.0.51.239": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000494:10.0.51.240": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000495:10.0.51.241": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000496:10.0.51.242": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000497:10.0.51.243": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000498:10.0.51.244": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000499:10.0.51.245": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000500:10.0.51.246": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000501:10.0.51.247": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000502:10.0.51.248": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000503:10.0.51.249": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000504:10.0.51.250": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000505:10.0.51.251": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000506:10.0.51.252": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000507:10.0.51.253": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000508:10.0.51.254": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000509:10.0.51.255": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000510:10.0.52.0": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000511:10.0.52.1": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000512:10.0.52.2": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000513:10.0.52.3": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000514:10.0.52.4": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000515:10.0.52.5": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000516:10.0.52.6": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000517:10.0.52.7": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000518:10.0.52.8": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000519:10.0.52.9": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000520:10.0.52.10": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000521:10.0.52.11": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000522:10.0.52.12": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000523:10.0.52.13": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000524:10.0.52.14": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000525:10.0.52.15": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000526:10.0.52.16": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000527:10.0.52.17": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000528:10.0.52.18": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000529:10.0.52.19": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000530:10.0.52.20": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000531:10.0.52.21": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000532:10.0.52.22": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000533:10.0.52.23": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000534:10.0.52.24": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000535:10.0.52.25": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000536:10.0.52.26": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000537:10.0.52.27": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000538:10.0.52.28": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000539:10.0.52.29": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000540:10.0.52.30": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000541:10.0.52.31": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000542:10.0.52.32": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000543:10.0.52.33": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000544:10.0.52.34": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000545:10.0.52.35": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000546:10.0.52.36": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000547:10.0.52.37": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000548:10.0.52.38": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000549:10.0.52.39": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000550:10.0.52.40": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000551:10.0.52.41": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000552:10.0.52.42": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000553:10.0.52.43": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000554:10.0.52.44": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000555:10.0.52.45": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000556:10.0.52.46": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000557:10.0.52.47": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000558:10.0.52.48": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000559:10.0.52.49": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000560:10.0.52.50": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000561:10.0.52.51": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000562:10.0.52.52": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000563:10.0.52.53": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000564:10.0.52.54": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000565:10.0.52.55": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000566:10.0.52.56": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000567:10.0.52.57": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000568:10.0.52.58": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000569:10.0.52.59": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000570:10.0.52.60": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000571:10.0.52.61": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000572:10.0.52.62": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000573:10.0.52.63": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000574:10.0.52.64": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000575:10.0.52.65": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000576:10.0.52.66": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000577:10.0.52.67": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000578:10.0.52.68": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000579:10.0.52.69": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000580:10.0.52.70": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000581:10.0.52.71": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000582:10.0.52.72": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000583:10.0.52.73": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000584:10.0.52.74": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000585:10.0.52.75": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000586:10.0.52.76": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000587:10.0.52.77": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000588:10.0.52.78": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000589:10.0.52.79": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000590:10.0.52.80": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000591:10.0.52.81": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000592:10.0.52.82": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000593:10.0.52.83": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000594:10.0.52.84": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000595:10.0.52.85": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000596:10.0.52.86": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000597:10.0.52.87": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000598:10.0.52.88": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000599:10.0.52.89": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000600:10.0.52.90": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000601:10.0.52.91": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000602:10.0.52.92": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000603:10.0.52.93": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000604:10.0.52.94": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000605:10.0.52.95": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000606:10.0.52.96": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000607:10.0.52.97": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000608:10.0.52.98": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000609:10.0.52.99": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000610:10.0.52.100": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000611:10.0.52.101": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000612:10.0.52.102": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000613:10.0.52.103": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000614:10.0.52.104": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000615:10.0.52.105": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000616:10.0.52.106": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000617:10.0.52.107": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000618:10.0.52.108": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000619:10.0.52.109": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000620:10.0.52.110": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000621:10.0.52.111": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000622:10.0.52.112": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000623:10.0.52.113": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000624:10.0.52.114": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000625:10.0.52.115": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000626:10.0.52.116": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000627:10.0.52.117": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000628:10.0.52.118": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000629:10.0.52.119": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000630:10.0.52.120": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000631:10.0.52.121": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000632:10.0.52.122": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000633:10.0.52.123": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000634:10.0.52.124": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000635:10.0.52.125": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000636:10.0.52.126": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000637:10.0.52.127": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000638:10.0.52.128": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000639:10.0.52.129": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000640:10.0.52.130": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000641:10.0.52.131": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000642:10.0.52.132": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000643:10.0.52.133": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000644:10.0.52.134": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000645:10.0.52.135": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000646:10.0.52.136": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000647:10.0.52.137": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000648:10.0.52.138": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000649:10.0.52.139": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000650:10.0.52.140": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000651:10.0.52.141": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000652:10.0.52.142": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000653:10.0.52.143": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000654:10.0.52.144": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000655:10.0.52.145": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000656:10.0.52.146": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000657:10.0.52.147": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000658:10.0.52.148": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000659:10.0.52.149": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000660:10.0.52.150": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000661:10.0.52.151": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000662:10.0.52.152": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000663:10.0.52.153": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000664:10.0.52.154": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000665:10.0.52.155": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000666:10.0.52.156": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000667:10.0.52.157": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000668:10.0.52.158": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000669:10.0.52.159": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000670:10.0.52.160": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000671:10.0.52.161": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000672:10.0.52.162": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000673:10.0.52.163": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000674:10.0.52.164": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000675:10.0.52.165": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000676:10.0.52.166": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000677:10.0.52.167": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000678:10.0.52.168": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000679:10.0.52.169": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000680:10.0.52.170": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000681:10.0.52.171": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000682:10.0.52.172": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000683:10.0.52.173": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000684:10.0.52.174": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000685:10.0.52.175": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000686:10.0.52.176": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000687:10.0.52.177": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000688:10.0.52.178": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000689:10.0.52.179": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000690:10.0.52.180": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000691:10.0.52.181": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000692:10.0.52.182": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000693:10.0.52.183": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000694:10.0.52.184": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000695:10.0.52.185": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000696:10.0.52.186": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000697:10.0.52.187": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000698:10.0.52.188": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000699:10.0.52.189": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000700:10.0.52.190": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000701:10.0.52.191": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000702:10.0.52.192": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000703:10.0.52.193": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000704:10.0.52.194": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000705:10.0.52.195": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000706:10.0.52.196": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000707:10.0.52.197": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000708:10.0.52.198": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000709:10.0.52.199": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000710:10.0.52.200": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000711:10.0.52.201": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000712:10.0.52.202": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000713:10.0.52.203": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000714:10.0.52.204": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000715:10.0.52.205": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000716:10.0.52.206": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000717:10.0.52.207": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000718:10.0.52.208": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000719:10.0.52.209": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000720:10.0.52.210": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000721:10.0.52.211": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000722:10.0.52.212": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000723:10.0.52.213": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000724:10.0.52.214": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000725:10.0.52.215": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000726:10.0.52.216": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000727:10.0.52.217": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000728:10.0.52.218": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000729:10.0.52.219": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000730:10.0.52.220": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000731:10.0.52.221": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000732:10.0.52.222": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000733:10.0.52.223": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000734:10.0.52.224": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000735:10.0.52.225": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000736:10.0.52.226": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000737:10.0.52.227": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000738:10.0.52.228": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000739:10.0.52.229": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000740:10.0.52.230": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000741:10.0.52.231": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000742:10.0.52.232": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000743:10.0.52.233": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000744:10.0.52.234": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000745:10.0.52.235": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000746:10.0.52.236": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000747:10.0.52.237": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000748:10.0.52.238": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000749:10.0.52.239": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000750:10.0.52.240": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000751:10.0.52.241": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000752:10.0.52.242": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000753:10.0.52.243": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000754:10.0.52.244": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000755:10.0.52.245": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000756:10.0.52.246": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000757:10.0.52.247": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000758:10.0.52.248": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000759:10.0.52.249": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000760:10.0.52.250": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000761:10.0.52.251": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000762:10.0.52.252": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000763:10.0.52.253": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000764:10.0.52.254": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000765:10.0.52.255": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000766:10.0.53.0": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000767:10.0.53.1": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000768:10.0.53.2": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000769:10.0.53.3": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000770:10.0.53.4": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000771:10.0.53.5": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000772:10.0.53.6": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000773:10.0.53.7": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000774:10.0.53.8": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000775:10.0.53.9": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000776:10.0.53.10": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000777:10.0.53.11": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000778:10.0.53.12": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000779:10.0.53.13": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000780:10.0.53.14": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000781:10.0.53.15": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000782:10.0.53.16": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000783:10.0.53.17": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000784:10.0.53.18": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000785:10.0.53.19": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000786:10.0.53.20": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000787:10.0.53.21": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000788:10.0.53.22": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000789:10.0.53.23": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000790:10.0.53.24": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000791:10.0.53.25": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000792:10.0.53.26": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000793:10.0.53.27": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000794:10.0.53.28": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000795:10.0.53.29": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000796:10.0.53.30": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000797:10.0.53.31": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000798:10.0.53.32": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000799:10.0.53.33": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000800:10.0.53.34": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000801:10.0.53.35": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000802:10.0.53.36": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000803:10.0.53.37": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000804:10.0.53.38": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000805:10.0.53.39": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000806:10.0.53.40": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000807:10.0.53.41": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000808:10.0.53.42": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000809:10.0.53.43": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000810:10.0.53.44": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000811:10.0.53.45": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000812:10.0.53.46": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000813:10.0.53.47": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000814:10.0.53.48": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000815:10.0.53.49": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000816:10.0.53.50": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000817:10.0.53.51": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000818:10.0.53.52": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000819:10.0.53.53": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000820:10.0.53.54": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000821:10.0.53.55": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000822:10.0.53.56": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000823:10.0.53.57": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000824:10.0.53.58": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000825:10.0.53.59": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000826:10.0.53.60": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000827:10.0.53.61": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000828:10.0.53.62": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000829:10.0.53.63": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000830:10.0.53.64": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000831:10.0.53.65": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000832:10.0.53.66": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000833:10.0.53.67": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000834:10.0.53.68": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000835:10.0.53.69": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000836:10.0.53.70": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000837:10.0.53.71": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000838:10.0.53.72": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000839:10.0.53.73": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000840:10.0.53.74": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000841:10.0.53.75": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000842:10.0.53.76": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000843:10.0.53.77": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000844:10.0.53.78": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000845:10.0.53.79": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000846:10.0.53.80": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000847:10.0.53.81": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000848:10.0.53.82": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000849:10.0.53.83": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000850:10.0.53.84": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000851:10.0.53.85": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000852:10.0.53.86": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000853:10.0.53.87": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000854:10.0.53.88": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000855:10.0.53.89": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000856:10.0.53.90": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000857:10.0.53.91": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000858:10.0.53.92": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000859:10.0.53.93": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000860:10.0.53.94": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000861:10.0.53.95": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000862:10.0.53.96": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000863:10.0.53.97": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000864:10.0.53.98": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000865:10.0.53.99": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000866:10.0.53.100": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000867:10.0.53.101": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000868:10.0.53.102": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000869:10.0.53.103": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000870:10.0.53.104": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000871:10.0.53.105": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000872:10.0.53.106": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000873:10.0.53.107": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000874:10.0.53.108": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000875:10.0.53.109": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000876:10.0.53.110": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000877:10.0.53.111": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000878:10.0.53.112": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000879:10.0.53.113": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000880:10.0.53.114": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000881:10.0.53.115": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000882:10.0.53.116": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000883:10.0.53.117": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000884:10.0.53.118": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000885:10.0.53.119": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000886:10.0.53.120": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000887:10.0.53.121": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000888:10.0.53.122": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000889:10.0.53.123": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000890:10.0.53.124": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000891:10.0.53.125": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000892:10.0.53.126": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000893:10.0.53.127": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000894:10.0.53.128": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000895:10.0.53.129": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000896:10.0.53.130": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000897:10.0.53.131": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000898:10.0.53.132": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000899:10.0.53.133": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000900:10.0.53.134": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000901:10.0.53.135": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000902:10.0.53.136": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000903:10.0.53.137": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000904:10.0.53.138": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000905:10.0.53.139": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000906:10.0.53.140": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000907:10.0.53.141": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000908:10.0.53.142": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000909:10.0.53.143": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000910:10.0.53.144": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000911:10.0.53.145": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000912:10.0.53.146": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000913:10.0.53.147": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000914:10.0.53.148": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000915:10.0.53.149": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000916:10.0.53.150": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000917:10.0.53.151": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000918:10.0.53.152": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000919:10.0.53.153": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000920:10.0.53.154": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000921:10.0.53.155": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000922:10.0.53.156": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000923:10.0.53.157": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000924:10.0.53.158": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000925:10.0.53.159": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000926:10.0.53.160": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000927:10.0.53.161": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000928:10.0.53.162": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000929:10.0.53.163": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000930:10.0.53.164": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000931:10.0.53.165": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000932:10.0.53.166": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000933:10.0.53.167": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000934:10.0.53.168": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000935:10.0.53.169": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000936:10.0.53.170": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000937:10.0.53.171": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000938:10.0.53.172": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000939:10.0.53.173": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000940:10.0.53.174": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000941:10.0.53.175": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000942:10.0.53.176": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000943:10.0.53.177": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000944:10.0.53.178": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000945:10.0.53.179": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000946:10.0.53.180": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000947:10.0.53.181": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000948:10.0.53.182": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000949:10.0.53.183": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000950:10.0.53.184": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000951:10.0.53.185": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000952:10.0.53.186": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000953:10.0.53.187": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000954:10.0.53.188": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000955:10.0.53.189": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000956:10.0.53.190": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000957:10.0.53.191": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000958:10.0.53.192": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000959:10.0.53.193": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000960:10.0.53.194": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000961:10.0.53.195": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000962:10.0.53.196": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000963:10.0.53.197": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000964:10.0.53.198": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000965:10.0.53.199": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000966:10.0.53.200": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000967:10.0.53.201": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000968:10.0.53.202": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000969:10.0.53.203": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000970:10.0.53.204": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000971:10.0.53.205": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000972:10.0.53.206": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000973:10.0.53.207": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000974:10.0.53.208": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000975:10.0.53.209": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000976:10.0.53.210": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000977:10.0.53.211": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000978:10.0.53.212": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000979:10.0.53.213": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000980:10.0.53.214": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000981:10.0.53.215": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000982:10.0.53.216": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000983:10.0.53.217": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000984:10.0.53.218": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000985:10.0.53.219": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000986:10.0.53.220": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000987:10.0.53.221": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000988:10.0.53.222": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000989:10.0.53.223": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    },
+    "Vnet0000990:10.0.53.224": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A0"
+    },
+    "Vnet0000991:10.0.53.225": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A1"
+    },
+    "Vnet0000992:10.0.53.226": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A2"
+    },
+    "Vnet0000993:10.0.53.227": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A3"
+    },
+    "Vnet0000994:10.0.53.228": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A4"
+    },
+    "Vnet0000995:10.0.53.229": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A5"
+    },
+    "Vnet0000996:10.0.53.230": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A6"
+    },
+    "Vnet0000997:10.0.53.231": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A7"
+    },
+    "Vnet0000998:10.0.53.232": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A8"
+    },
+    "Vnet0000999:10.0.53.233": {
+        "routing_type": "vnet_encap",
+        "underlay_ip": "2601:12:7a:1::1234",
+        "mac_address": "F9-22-83-99-22-A9"
+    }
+}

@@ -388,8 +388,8 @@ func TestNativeWriteBatch(t *testing.T) {
 		table string
 		file   string
 	}{
-		{"Route table", "DASH_ROUTE_TABLE", "../testdata/dash_route_batch.txt"},
-		{"Mapping table", "DASH_VNET_MAPPING_TABLE", "../testdata/dash_mapping_batch.txt"},
+		{"Route table", "DASH_ROUTE_TABLE", "../testdata/dash_route_batch.json"},
+		{"Mapping table", "DASH_VNET_MAPPING_TABLE", "../testdata/dash_mapping_batch.json"},
 	}
 	for _, tt := range tests {
 		// Get the time used for parse request
