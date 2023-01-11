@@ -1,10 +1,11 @@
-#ifndef _C_PRODUCERSTATETABLE_H
-#define _C_PRODUCERSTATETABLE_H
+#ifndef _C_ZMQPRODUCERSTATETABLE_H
+#define _C_ZMQPRODUCERSTATETABLE_H
 
 #include <hiredis/hiredis.h>
 #include <stdbool.h>
 
-#include "zmqproducertable.h"
+#include "producertable.h"
+#include "zmqproducerstatetable.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,7 +37,7 @@ void zmq_producer_state_table_set(zmq_producer_state_table_t pt,
 // void ZmqProducerStateTable::del(std::string key,
 //                         std::string op = DEL_COMMAND,
 //                         std::string prefix = EMPTY_PREFIX)
-void zmq_producer_state_table_del(producer_state_table_t pt,
+void zmq_producer_state_table_del(zmq_producer_state_table_t pt,
                         const char *key,
                         const char *op,
                         const char *prefix);
