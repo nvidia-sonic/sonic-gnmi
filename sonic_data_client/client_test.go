@@ -3,12 +3,15 @@ package client
 import (
 	"testing"
 	"os"
+	"time"
 	"reflect"
 	"io/ioutil"
 	"encoding/json"
 
 	"github.com/jipanyang/gnxi/utils/xpath"
+	"github.com/sonic-net/sonic-gnmi/swsscommon"
 	gnmipb "github.com/openconfig/gnmi/proto/gnmi"
+	"github.com/agiledragon/gomonkey/v2"
 )
 
 var testFile string = "/etc/sonic/gnmi/ut.cp.json"
@@ -347,3 +350,70 @@ func TestParseTarget(t *testing.T) {
 		t.Errorf("ParseTarget should fail for conflict")
 	}
 }
+
+func NativePerf(t *testing.T, client MixedDbClient, test string, table string, file string, mode string) {
+	var delete []*gnmipb.Path
+	var replace []*gnmipb.Update
+	var update []*gnmipb.Update
+	jsonBytes, err := ioutil.ReadFile(file)
+	if err != nil {
+		t.Errorf("Fail to read %v", file)
+	}
+	pbPath, err := xpath.ToGNMIPath(table)
+	if err != nil {
+		t.Errorf("error in parsing xpath %q to gnmi path", table)
+	}
+	pbVal := &gnmipb.TypedValue{
+		Value: &gnmipb.TypedValue_JsonIetfVal{
+			JsonIetfVal: jsonBytes,
+		},
+	}
+	update = append(update, &gnmipb.Update{Path: pbPath, Val: pbVal})
+	t1 := time.Now()
+	err = client.SetDB(delete, replace, update)
+	t2 := time.Now()
+	t.Logf("%s: %s takes time: %v", mode, test, t2.Sub(t1))
+	if err != nil {
+		t.Errorf("Performance test failed: %v", err)
+	}
+}
+
+func TestNativeWriteBatch(t *testing.T) {
+	var client MixedDbClient
+	client.target = "APPL_DB"
+	client.applDB = swsscommon.NewDBConnector2(APPL_DB, REDIS_SOCK, SWSS_TIMEOUT)
+	client.tableMap = map[string]swsscommon.ProducerStateTable{}
+	tests := []struct {
+		name  string
+		table string
+		file   string
+	}{
+		{"Route table", "DASH_ROUTE_TABLE", "../testdata/dash_route_batch.json"},
+		{"Mapping table", "DASH_VNET_MAPPING_TABLE", "../testdata/dash_mapping_batch.json"},
+	}
+	for _, tt := range tests {
+		// Get the time used for parse request
+		mock1 := gomonkey.ApplyFuncReturn(emitJSON, nil, nil)
+		mock2 := gomonkey.ApplyFuncReturn(RunPyCode, nil)
+		mock3 := gomonkey.ApplyFuncReturn(ConvertDbEntry, nil)
+		mock4 := gomonkey.ApplyMethodReturn(&client, "DbDelTable", nil)
+		mock5 := gomonkey.ApplyMethodReturn(&client, "DbSetTable", nil)
+		NativePerf(t, client, tt.name, tt.table, tt.file, "Parse request")
+		mock1.Reset()
+		mock2.Reset()
+		mock3.Reset()
+		mock4.Reset()
+		mock5.Reset()
+		// Get the time used for parse request, yang validation
+		mock3 = gomonkey.ApplyFuncReturn(ConvertDbEntry, nil)
+		mock4 = gomonkey.ApplyMethodReturn(&client, "DbDelTable", nil)
+		mock5 = gomonkey.ApplyMethodReturn(&client, "DbSetTable", nil)
+		NativePerf(t, client, tt.name, tt.table, tt.file, "Parse request, yang validation")
+		mock3.Reset()
+		mock4.Reset()
+		mock5.Reset()
+		// Get the time used for parse request, yang validation and swsscommon
+		NativePerf(t, client, tt.name, tt.table, tt.file, "Parse request, yang validation and swsscommon")
+	}
+}
+

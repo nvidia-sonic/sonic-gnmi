@@ -91,6 +91,8 @@ stages:
 
         # LIBYANG
         sudo dpkg -i ../target/debs/bullseye/libyang*1.0.73*.deb
+        sudo pip3 install ../target/python-wheels/bullseye/sonic_yang_mgmt-1.0-py3-none-any.whl
+        sudo pip3 install ../target/python-wheels/bullseye/sonic_yang_models-1.0-py3-none-any.whl
       displayName: "Install dependency"
 
     - script: |
