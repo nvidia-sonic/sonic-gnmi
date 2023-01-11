@@ -1,0 +1,22 @@
+// dash.proto describes the message format for DASH table.
+syntax = "proto3";
+
+package gnmi.sonic;
+
+message DashRoute {
+  string eni = 1;
+  string prefix = 2;
+  string ip_version = 3;
+  string routing_type = 4;
+  string vnet = 5;
+  string customer_addr = 6;
+  string appliance = 7;
+  string underlay_ip = 8;
+  string overlay_sip = 9;
+  string overlay_dip = 10;
+  string metering_bucket = 11;
+}
+
+message DashRouteTable {
+  repeated DashRoute routes = 1;
+}
