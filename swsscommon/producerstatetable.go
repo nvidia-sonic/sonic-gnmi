@@ -8,6 +8,7 @@ import "C"
 
 import (
     "unsafe"
+	log "github.com/golang/glog"
 )
 
 type ProducerStateTable struct {
@@ -20,13 +21,22 @@ func NewProducerStateTable(db DBConnector, tableName string) ProducerStateTable 
     tableNameC := C.CString(tableName)
     defer C.free(unsafe.Pointer(tableNameC))
 
-    if tableName == "DASH_VNET_MAPPING_TABLE" || tableName == "DASH_VNET_MAPPING_TABLE" {
+    if tableName == "DASH_VNET_MAPPING_TABLE" {
         // [Hua] POC code for improve Dash performance with ZMQ
+		log.V(2).Infof("[ZMQ]: NewProducerStateTable zmq_producer_state_table_new %s", tableName)
         endpointC := C.CString("tcp://localhost:1234")
         defer C.free(unsafe.Pointer(endpointC))
         pt := C.zmq_producer_state_table_new(C.db_connector_t2(db.ptr), tableNameC, endpointC)
         return ProducerStateTable{ptr: unsafe.Pointer(pt), table: tableName, zmq: true}
+    } else if tableName == "DASH_ROUTE_TABLE" {
+        // [Hua] POC code for improve Dash performance with ZMQ
+		log.V(2).Infof("[ZMQ]: NewProducerStateTable zmq_producer_state_table_new %s", tableName)
+        endpointC := C.CString("tcp://localhost:1235")
+        defer C.free(unsafe.Pointer(endpointC))
+        pt := C.zmq_producer_state_table_new(C.db_connector_t2(db.ptr), tableNameC, endpointC)
+        return ProducerStateTable{ptr: unsafe.Pointer(pt), table: tableName, zmq: true}
     } else {
+		log.V(2).Infof("[ZMQ]: NewProducerStateTable producer_state_table_new %s", tableName)
         pt := C.producer_state_table_new(C.db_connector_t2(db.ptr), tableNameC)
         return ProducerStateTable{ptr: unsafe.Pointer(pt), table: tableName, zmq: false}
     }
@@ -84,8 +94,10 @@ func (pt ProducerStateTable) Set(key string, values map[string]string, op string
     }
 
     if pt.zmq {
+		// log.V(2).Infof("[ZMQ]: zmq set %s", key)
         C.zmq_producer_state_table_set(C.zmq_producer_state_table_t(pt.ptr), keyC, tuplePtr, C.size_t(count), opC, prefixC)
     } else {
+		// log.V(2).Infof("[ZMQ]: redis set %s", key)
         C.producer_state_table_set(C.producer_state_table_t(pt.ptr), keyC, tuplePtr, C.size_t(count), opC, prefixC)
     }
 }
