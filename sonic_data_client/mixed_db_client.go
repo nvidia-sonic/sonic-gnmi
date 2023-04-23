@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"reflect"
 	"strconv"
 	"strings"
 	"sync"
@@ -131,6 +130,13 @@ func IsSupportedOrigin(origin string) bool {
 }
 
 func (c *MixedDbClient) DbSetTable(table string, key string, values map[string]string) error {
+	pb := []byte(values["pb"])
+	log.V(6).Infof("DbSetTable: Table %s, key %s, values %d\n", table, key, len(pb))
+	text := ""
+	for _, v := range pb {
+		text = fmt.Sprintf("%s %02x", text, v)
+	}
+	log.V(6).Infof(text)
 	pt, ok := c.tableMap[table]
 	if !ok {
 		pt = swsscommon.NewProducerStateTable(c.applDB, table)
@@ -141,6 +147,7 @@ func (c *MixedDbClient) DbSetTable(table string, key string, values map[string]s
 }
 
 func (c *MixedDbClient) DbDelTable(table string, key string) error {
+	log.V(6).Infof("DbDelTable: Table %s, key %s\n", table, key)
 	pt, ok := c.tableMap[table]
 	if !ok {
 		pt = swsscommon.NewProducerStateTable(c.applDB, table)
@@ -274,10 +281,6 @@ func (c *MixedDbClient) populateDbtablePath(path *gnmipb.Path, value *gnmipb.Typ
 		}
 		dbPath = buffer.String()
 	}
-	value_str := ""
-	if value != nil {
-		value_str = string(value.GetJsonIetfVal())
-	}
 
 	tblPath.dbNamespace = dbNamespace
 	tblPath.dbName = targetDbName
@@ -285,9 +288,21 @@ func (c *MixedDbClient) populateDbtablePath(path *gnmipb.Path, value *gnmipb.Typ
 	tblPath.delimitor = separator
 	tblPath.operation = opRemove
 	tblPath.index = -1
+	tblPath.jsonValue = ""
+	tblPath.protoValue = ""
 	if value != nil {
 		tblPath.operation = opAdd
-		tblPath.value = value_str
+		jv := value.GetJsonIetfVal()
+		if jv != nil {
+			tblPath.jsonValue = string(jv)
+		}
+		pv := value.GetProtoBytes()
+		if pv != nil {
+			tblPath.protoValue = string(pv)
+		}
+		if jv == nil && pv == nil {
+			return fmt.Errorf("Unsupported TypedValue: %v", value)
+		}
 	}
 
 	var mappedKey string
@@ -552,14 +567,10 @@ func ConvertDbEntry(inputData map[string]interface{}) map[string]string {
 }
 
 func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
-	var pattern string
-	var dbkeys []string
 	var err error
-	var res interface{}
 
 	for _, tblPath := range tblPaths {
 		log.V(5).Infof("handleTableData: tblPath %v", tblPath)
-		redisDb := Target2RedisDb[tblPath.dbNamespace][tblPath.dbName]
 
 		if tblPath.jsonField == "" { // Not asked to include field in json value, which means not wildcard query
 			// table path includes table, key and field
@@ -571,98 +582,28 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 			}
 		}
 
-		if tblPath.operation == opRemove {
-			//Only table name provided
-			if tblPath.tableKey == "" {
-				// tables in COUNTERS_DB other than COUNTERS table doesn't have keys
-				if tblPath.dbName == "COUNTERS_DB" && tblPath.tableName != "COUNTERS" {
-					pattern = tblPath.tableName
-				} else {
-					pattern = tblPath.tableName + tblPath.delimitor + "*"
-				}
-				// Can't remove entry in temporary state table
-				dbkeys, err = redisDb.Keys(pattern).Result()
-				if err != nil {
-					log.V(2).Infof("redis Keys failed for %v, pattern %s", tblPath, pattern)
-					return fmt.Errorf("redis Keys failed for %v, pattern %s %v", tblPath, pattern, err)
-				}
-			} else {
-				// both table name and key provided
-				dbkeys = []string{tblPath.tableName + tblPath.delimitor + tblPath.tableKey}
-			}
+		if tblPath.tableKey == "" {
+			// Must provide table key
+			return fmt.Errorf("Unsupported path %v, can't update table", tblPath)
+		}
 
-			for _, dbkey := range dbkeys {
-				tableKey := strings.TrimPrefix(dbkey, tblPath.tableName + tblPath.delimitor)
-				err = c.DbDelTable(tblPath.tableName, tableKey)
-				if err != nil {
-					log.V(2).Infof("swsscommon delete failed for  %v, dbkey %s", tblPath, dbkey)
-					return err
-				}
+		if tblPath.operation == opRemove {
+			err = c.DbDelTable(tblPath.tableName, tblPath.tableKey)
+			if err != nil {
+				log.V(2).Infof("swsscommon delete failed for  %v", tblPath)
+				return err
 			}
 		} else if tblPath.operation == opAdd {
-			if tblPath.tableKey != "" {
-				// both table name and key provided
-				res, err = parseJson([]byte(tblPath.value))
-				if err != nil {
-					return err
-				}
-				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					tableMap := make(map[string]interface{})
-					tableMap[tblPath.tableKey] = vtable
-					configMap[tblPath.tableName] = tableMap
-					ietf_json_val, err := emitJSON(&configMap)
-					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
-					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
-					}
-					outputData := ConvertDbEntry(vtable)
-					c.DbDelTable(tblPath.tableName, tblPath.tableKey)
-					err = c.DbSetTable(tblPath.tableName, tblPath.tableKey, outputData)
-					if err != nil {
-						log.V(2).Infof("swsscommon update failed for  %v, value %v", tblPath, outputData)
-						return err
-					}
-				} else {
-					return fmt.Errorf("Key %v: Unsupported value %v type %v", tblPath.tableKey, res, reflect.TypeOf(res))
-				}
-			} else {
-				res, err = parseJson([]byte(tblPath.value))
-				if err != nil {
-					return err
-				}
-				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					configMap[tblPath.tableName] = vtable
-					ietf_json_val, err := emitJSON(&configMap)
-					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
-					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
-					}
-					for tableKey, tres := range vtable {
-						if vt, ret := tres.(map[string]interface{}); ret {
-							outputData := ConvertDbEntry(vt)
-							c.DbDelTable(tblPath.tableName, tableKey)
-							err = c.DbSetTable(tblPath.tableName, tableKey, outputData)
-							if err != nil {
-								log.V(2).Infof("swsscommon update failed for  %v, value %v", tblPath, outputData)
-								return err
-							}
-						} else {
-							return fmt.Errorf("Key %v: Unsupported value %v type %v", tableKey, tres, reflect.TypeOf(tres))
-						}
-					}
-				} else {
-					return fmt.Errorf("Unsupported value %v type %v", res, reflect.TypeOf(res))
-				}
+			if len(tblPath.protoValue) == 0 {
+				return fmt.Errorf("No valid value: %v", tblPath)
+			}
+			vtable := make(map[string]interface{})
+			vtable["pb"] = tblPath.protoValue
+			outputData := ConvertDbEntry(vtable)
+			err = c.DbSetTable(tblPath.tableName, tblPath.tableKey, outputData)
+			if err != nil {
+				log.V(2).Infof("swsscommon update failed for  %v, value %v", tblPath, outputData)
+				return err
 			}
 		} else {
 			return fmt.Errorf("Unsupported operation %v", tblPath.operation)

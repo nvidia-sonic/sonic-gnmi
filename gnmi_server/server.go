@@ -28,7 +28,7 @@ import (
 )
 
 var (
-	supportedEncodings = []gnmipb.Encoding{gnmipb.Encoding_JSON, gnmipb.Encoding_JSON_IETF}
+	supportedEncodings = []gnmipb.Encoding{gnmipb.Encoding_JSON, gnmipb.Encoding_JSON_IETF, gnmipb.Encoding_PROTO}
 )
 
 // Server manages a single gNMI Server implementation. Each client that connects
@@ -382,6 +382,7 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 	}
 	extensions := req.GetExtension()
 
+	log.V(2).Infof("Update target: %s", target)
 	var dc sdc.Client
 	if target == "MIXED" {
 		if s.config.EnableNativeWrite == false {
@@ -439,6 +440,7 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 	/* UPDATE */
 	for _, path := range req.GetUpdate() {
 		log.V(2).Infof("Update path: %v ", path)
+		log.V(2).Infof("[ZMQ]: gnmi start append")
 
 		res := gnmipb.UpdateResult{
 			Path: path.GetPath(),
@@ -446,11 +448,15 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 		}
 		/* Add to Set response results. */
 		results = append(results, &res)
+		log.V(2).Infof("[ZMQ]: gnmi end append")
 	}
+	log.V(2).Infof("[ZMQ]: gnmi start set")
 	err = dc.Set(req.GetDelete(), req.GetReplace(), req.GetUpdate())
 	if err != nil {
 		common_utils.IncCounter("GNMI set fail")
 	}
+
+	log.V(2).Infof("[ZMQ]: gnmi end set")
 
 	return &gnmipb.SetResponse{
 		Prefix:   req.GetPrefix(),
