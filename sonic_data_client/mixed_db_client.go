@@ -63,7 +63,8 @@ type MixedDbClient struct {
 	workPath string
 	jClient *JsonClient
 	applDB swsscommon.DBConnector
-	tableMap map[string]swsscommon.ProducerStateTable
+	zmqClient swsscommon.ZmqClient
+	tableMap map[string]swsscommon.ZmqProducerStateTable
 
 	synced sync.WaitGroup  // Control when to send gNMI sync_response
 	w      *sync.WaitGroup // wait for all sub go routines to finish
@@ -133,7 +134,7 @@ func IsSupportedOrigin(origin string) bool {
 func (c *MixedDbClient) DbSetTable(table string, key string, values map[string]string) error {
 	pt, ok := c.tableMap[table]
 	if !ok {
-		pt = swsscommon.NewProducerStateTable(c.applDB, table)
+		pt = swsscommon.NewZmqProducerStateTable(c.applDB, table, c.zmqClient)
 		c.tableMap[table] = pt
 	}
 	pt.Set(key, values, "SET", "")
@@ -143,14 +144,14 @@ func (c *MixedDbClient) DbSetTable(table string, key string, values map[string]s
 func (c *MixedDbClient) DbDelTable(table string, key string) error {
 	pt, ok := c.tableMap[table]
 	if !ok {
-		pt = swsscommon.NewProducerStateTable(c.applDB, table)
+		pt = swsscommon.NewZmqProducerStateTable(c.applDB, table, c.zmqClient)
 		c.tableMap[table] = pt
 	}
 	pt.Del(key, "DEL", "")
 	return nil
 }
 
-func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path) (Client, error) {
+func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress string) (Client, error) {
 	var client MixedDbClient
 	var err error
 
@@ -198,7 +199,11 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path) (Client, error)
 	client.paths = paths
 	client.workPath = common_utils.GNMI_WORK_PATH
 	client.applDB = swsscommon.NewDBConnector2(APPL_DB, REDIS_SOCK, SWSS_TIMEOUT)
-	client.tableMap = map[string]swsscommon.ProducerStateTable{}
+	client.tableMap = map[string]swsscommon.ZmqProducerStateTable{}
+	
+	// [Hua] TODO: ZMQ client address shoud be configurable, also where release all these resource?
+	client.zmqClient = swsscommon.NewZmqClient(zmqAddress)
+	client.zmqClient.Connect()
 
 	return &client, nil
 }

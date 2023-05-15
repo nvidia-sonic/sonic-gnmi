@@ -1,21 +1,21 @@
+#include <capi/zmqclient.h>
 #include <capi/zmqproducerstatetable.h>
 #include <zmqproducerstatetable.h>
-#include <dbconnector.h>
-#include <redispipeline.h>
 
 #include <string>
 #include <vector>
 #include <tuple>
-
-zmq_producer_state_table_t zmq_producer_state_table_new(db_connector_t db, const char *tableName, const char *endpoint)
+zmq_producer_state_table_t zmq_producer_state_table_new(db_connector_t2 db, const char *tableName, zmq_client_t pc)
 {
-    auto pt = new swss::ZmqProducerStateTable(static_cast<swss::DBConnector*>(db), std::string(tableName), std::string(endpoint));
+    swss::ZmqClient* client = static_cast<swss::ZmqClient*>(pc);
+    auto pt = new swss::ZmqProducerStateTable(static_cast<swss::DBConnector*>(db), std::string(tableName), *client);
     return static_cast<zmq_producer_state_table_t>(pt);
 }
 
-zmq_producer_state_table_t zmq_producer_state_table_new2(redis_pipeline_t pipeline, const char *tableName, const char *endpoint, bool buffered)
+zmq_producer_state_table_t zmq_producer_state_table_new2(redis_pipeline_t pipeline, const char *tableName, zmq_client_t pc, bool buffered)
 {
-    auto pt = new swss::ZmqProducerStateTable(static_cast<swss::RedisPipeline*>(pipeline), std::string(tableName), std::string(endpoint), buffered);
+    swss::ZmqClient* client = static_cast<swss::ZmqClient*>(pc);
+    auto pt = new swss::ZmqProducerStateTable(static_cast<swss::RedisPipeline*>(pipeline), std::string(tableName), *client, buffered);
     return static_cast<zmq_producer_state_table_t>(pt);
 }
 

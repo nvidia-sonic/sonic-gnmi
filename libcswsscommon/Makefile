@@ -8,7 +8,7 @@ INCLUDES= \
 CPPFLAGS=-g -std=c++11 $(INCLUDES)
 LDFLAGS=-g -shared
 
-SRCS=src/dbconnector.cpp src/producertable.cpp src/producerstatetable.cpp src/table.cpp src/zmqproducerstatetable.cpp
+SRCS=src/dbconnector.cpp src/producertable.cpp src/producerstatetable.cpp src/table.cpp src/zmqproducerstatetable.cpp src/zmqclient.cpp
 OBJS=$(SRCS:.cpp=.o)
 %.o: %.cpp
 	$(CXX) $(CPPFLAGS) -c $< -o $@

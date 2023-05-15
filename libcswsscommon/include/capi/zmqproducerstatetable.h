@@ -14,11 +14,12 @@ extern "C" {
 typedef void *db_connector_t2;
 typedef void *redis_pipeline_t;
 typedef void *zmq_producer_state_table_t;
+typedef void *zmq_client_t;
 
-// ZmqProducerStateTable::ZmqProducerStateTable(DBConnector *db, std::string tableName, const std::string endpoint)
-zmq_producer_state_table_t zmq_producer_state_table_new(db_connector_t2 db, const char *tableName, const char *endpoint);
-// ZmqProducerStateTable::ZmqProducerStateTable(RedisPipeline *pipeline, std::string tableName, const std::string endpoint, bool buffered = false)
-zmq_producer_state_table_t zmq_producer_state_table_new2(redis_pipeline_t pipeline, const char *tableName, const char *endpoint, bool buffered);
+// ZmqProducerStateTable::ZmqProducerStateTable(DBConnector *db, const string &tableName, ZmqClient &zmqClient)
+zmq_producer_state_table_t zmq_producer_state_table_new(db_connector_t2 db, const char *tableName, zmq_client_t pc);
+// ZmqProducerStateTable::ZmqProducerStateTable(RedisPipeline *pipeline, const string &tableName, ZmqClient &zmqClient, bool buffered)
+zmq_producer_state_table_t zmq_producer_state_table_new2(redis_pipeline_t pipeline, const char *tableName, zmq_client_t pc, bool buffered);
 
 // ZmqProducerStateTable::~ZmqProducerStateTable()
 void zmq_producer_state_table_delete(zmq_producer_state_table_t pt);
