@@ -200,8 +200,7 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 	client.workPath = common_utils.GNMI_WORK_PATH
 	client.applDB = swsscommon.NewDBConnector2(APPL_DB, REDIS_SOCK, SWSS_TIMEOUT)
 	client.tableMap = map[string]swsscommon.ZmqProducerStateTable{}
-	
-	// [Hua] TODO: ZMQ client address shoud be configurable, also where release all these resource?
+
 	client.zmqClient = swsscommon.NewZmqClient(zmqAddress)
 	client.zmqClient.Connect()
 
