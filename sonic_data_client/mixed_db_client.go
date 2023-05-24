@@ -30,6 +30,7 @@ import (
 
 const REDIS_SOCK string = "/var/run/redis/redis.sock"
 const APPL_DB int = 0
+const APPL_DB_NAME string = "APPL_DB"
 const SWSS_TIMEOUT uint = 0
 
 const (
@@ -198,7 +199,7 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 	}
 	client.paths = paths
 	client.workPath = common_utils.GNMI_WORK_PATH
-	client.applDB = swsscommon.NewDBConnector2(APPL_DB, REDIS_SOCK, SWSS_TIMEOUT)
+	client.applDB = swsscommon.NewDBConnector3(APPL_DB_NAME, SWSS_TIMEOUT, false)
 	client.tableMap = map[string]swsscommon.ZmqProducerStateTable{}
 
 	client.zmqClient = swsscommon.NewZmqClient(zmqAddress)

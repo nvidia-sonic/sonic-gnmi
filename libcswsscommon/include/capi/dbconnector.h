@@ -14,6 +14,8 @@ typedef void *db_connector_t;
 db_connector_t db_connector_new(int db, const char *hostname, int port, unsigned int timeout);
 // DBConnector::DBConnector(int db, std::string unixPath, unsigned int timeout)
 db_connector_t db_connector_new2(int db, const char *unixPath, unsigned int timeout);
+// DBConnector::DBConnector(std::string dbName, unsigned int timeout, bool isTcpConn)
+db_connector_t db_connector_new3(const char *dbName, unsigned int timeout, bool isTcpConn);
 
 // DBConnector::~DBConnector()
 void db_connector_delete(db_connector_t db);
