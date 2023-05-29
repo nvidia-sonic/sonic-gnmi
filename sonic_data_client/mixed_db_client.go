@@ -64,6 +64,7 @@ type MixedDbClient struct {
 	jClient *JsonClient
 	applDB swsscommon.DBConnector
 	tableMap map[string]swsscommon.ProducerStateTable
+	enableYangValidation bool
 
 	synced sync.WaitGroup  // Control when to send gNMI sync_response
 	w      *sync.WaitGroup // wait for all sub go routines to finish
@@ -150,7 +151,7 @@ func (c *MixedDbClient) DbDelTable(table string, key string) error {
 	return nil
 }
 
-func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path) (Client, error) {
+func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, enableYangValidation bool) (Client, error) {
 	var client MixedDbClient
 	var err error
 
@@ -159,6 +160,7 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path) (Client, error)
 		useRedisTcpClient()
 	}
 
+	client.enableYangValidation = enableYangValidation
 	client.prefix = prefix
 	client.target = ""
 	client.origin = ""
@@ -607,18 +609,20 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 					return err
 				}
 				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					tableMap := make(map[string]interface{})
-					tableMap[tblPath.tableKey] = vtable
-					configMap[tblPath.tableName] = tableMap
-					ietf_json_val, err := emitJSON(&configMap)
-					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
-					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
+					if c.enableYangValidation {
+						configMap := make(map[string]interface{})
+						tableMap := make(map[string]interface{})
+						tableMap[tblPath.tableKey] = vtable
+						configMap[tblPath.tableName] = tableMap
+						ietf_json_val, err := emitJSON(&configMap)
+						if err != nil {
+							return fmt.Errorf("Translate to json failed!")
+						}
+						PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
+						err = RunPyCode(PyCodeInGo)
+						if err != nil {
+							return fmt.Errorf("Yang validation failed!")
+						}
 					}
 					outputData := ConvertDbEntry(vtable)
 					c.DbDelTable(tblPath.tableName, tblPath.tableKey)
@@ -636,16 +640,18 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 					return err
 				}
 				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					configMap[tblPath.tableName] = vtable
-					ietf_json_val, err := emitJSON(&configMap)
-					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
-					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
+					if c.enableYangValidation {
+						configMap := make(map[string]interface{})
+						configMap[tblPath.tableName] = vtable
+						ietf_json_val, err := emitJSON(&configMap)
+						if err != nil {
+							return fmt.Errorf("Translate to json failed!")
+						}
+						PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
+						err = RunPyCode(PyCodeInGo)
+						if err != nil {
+							return fmt.Errorf("Yang validation failed!")
+						}
 					}
 					for tableKey, tres := range vtable {
 						if vt, ret := tres.(map[string]interface{}); ret {
@@ -913,11 +919,12 @@ func (c *MixedDbClient) SetFullConfig(delete []*gnmipb.Path, replace []*gnmipb.U
 	if err != nil {
 		return err
 	}
-
-	PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-	err = RunPyCode(PyCodeInGo)
-	if err != nil {
-		return fmt.Errorf("Yang validation failed!")
+	if c.enableYangValidation {
+		PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
+		err = RunPyCode(PyCodeInGo)
+		if err != nil {
+			return fmt.Errorf("Yang validation failed!")
+		}
 	}
 
 	return nil
