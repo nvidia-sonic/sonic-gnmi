@@ -31,6 +31,7 @@ var (
 	jwtValInt         = flag.Uint64("jwt_valid_int", 3600, "Seconds that JWT token is valid for.")
 	gnmi_translib_write = flag.Bool("gnmi_translib_write", gnmi.ENABLE_TRANSLIB_WRITE, "Enable gNMI translib write for management framework")
 	gnmi_native_write   = flag.Bool("gnmi_native_write", gnmi.ENABLE_NATIVE_WRITE, "Enable gNMI native write")
+	yang_validation   = flag.Bool("yang_validation", gnmi.ENABLE_YANG_VALIDATION, "Enable yang validation")
 )
 
 func main() {
@@ -64,6 +65,7 @@ func main() {
 	cfg.Port = int64(*port)
 	cfg.EnableTranslibWrite = bool(*gnmi_translib_write)
 	cfg.EnableNativeWrite = bool(*gnmi_native_write)
+	cfg.EnableYangValidation = bool(*yang_validation)
 	cfg.LogLevel = 3
 	cfg.ZmqAddress = string(*zmqAddress)
 	var opts []grpc.ServerOption

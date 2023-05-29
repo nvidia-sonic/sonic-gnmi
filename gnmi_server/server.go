@@ -31,6 +31,8 @@ var (
 	supportedEncodings = []gnmipb.Encoding{gnmipb.Encoding_JSON, gnmipb.Encoding_JSON_IETF}
 )
 
+const ENABLE_YANG_VALIDATION = false
+
 // Server manages a single gNMI Server implementation. Each client that connects
 // via Subscribe or Get will receive a stream of updates based on the requested
 // path. Set request is processed by server too.
@@ -53,6 +55,7 @@ type Config struct {
 	EnableTranslibWrite bool
 	EnableNativeWrite bool
 	ZmqAddress string
+	EnableYangValidation bool
 }
 
 var AuthLock sync.Mutex
@@ -325,7 +328,7 @@ func (s *Server) Get(ctx context.Context, req *gnmipb.GetRequest) (*gnmipb.GetRe
 	if target == "OTHERS" {
 		dc, err = sdc.NewNonDbClient(paths, prefix)
 	} else if target == "MIXED" {
-		dc, err = sdc.NewMixedDbClient(paths, prefix, s.config.ZmqAddress)
+		dc, err = sdc.NewMixedDbClient(paths, prefix, s.config.ZmqAddress, s.config.EnableYangValidation)
 	} else if _, ok, _, _ := sdc.IsTargetDb(target); ok {
 		dc, err = sdc.NewDbClient(paths, prefix)
 	} else {
@@ -396,7 +399,7 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 		for _, path := range req.GetUpdate() {
 			paths = append(paths, path.GetPath())
 		}
-		dc, err = sdc.NewMixedDbClient(paths, prefix, s.config.ZmqAddress)
+		dc, err = sdc.NewMixedDbClient(paths, prefix, s.config.ZmqAddress, s.config.EnableYangValidation)
 	} else {
 		if s.config.EnableTranslibWrite == false {
 			common_utils.IncCounter("GNMI set fail")
@@ -471,7 +474,7 @@ func (s *Server) Capabilities(ctx context.Context, req *gnmipb.CapabilityRequest
 	var supportedModels []gnmipb.ModelData
 	dc, _ := sdc.NewTranslClient(nil, nil, ctx, extensions)
 	supportedModels = append(supportedModels, dc.Capabilities()...)
-	dc, _ = sdc.NewMixedDbClient(nil, nil, s.config.ZmqAddress)
+	dc, _ = sdc.NewMixedDbClient(nil, nil, s.config.ZmqAddress, s.config.EnableYangValidation)
 	supportedModels = append(supportedModels, dc.Capabilities()...)
 
 	suppModels := make([]*gnmipb.ModelData, len(supportedModels))
