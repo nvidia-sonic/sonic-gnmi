@@ -15,6 +15,12 @@ extern "C" db_connector_t db_connector_new2(int db, const char *unixPath, unsign
     return static_cast<db_connector_t>(dbc);
 }
 
+extern "C" db_connector_t db_connector_new3(const char *dbName, unsigned int timeout, bool isTcpConn)
+{
+    auto dbc = new swss::DBConnector(std::string(dbName), timeout, isTcpConn);
+    return static_cast<db_connector_t>(dbc);
+}
+
 extern "C" void db_connector_delete(db_connector_t db)
 {
     delete static_cast<swss::DBConnector*>(db);

@@ -1,38 +1,39 @@
 package swsscommon
 
 // #cgo LDFLAGS: -lcswsscommon -lswsscommon -lstdc++
-// #include <capi/producerstatetable.h>
+// #include <capi/zmqclient.h>
+// #include <capi/zmqproducerstatetable.h>
 // #include <stdlib.h>
 import "C"
 
 import (
+    "log"
     "unsafe"
 )
 
-type ProducerStateTable struct {
+type ZmqProducerStateTable struct {
     ptr   unsafe.Pointer
     table string
 }
 
+func NewZmqProducerStateTable(db DBConnector, tableName string, client ZmqClient) ZmqProducerStateTable {
+    log.Printf(
+        "trace: new ZmqProducerStateTable: %s",
+        tableName,
+    )
 
-func NewProducerStateTable(db DBConnector, tableName string) ProducerStateTable {
     tableNameC := C.CString(tableName)
     defer C.free(unsafe.Pointer(tableNameC))
 
-    pt := C.producer_state_table_new(C.db_connector_t2(db.ptr), tableNameC)
-    return ProducerStateTable{ptr: unsafe.Pointer(pt), table: tableName}
+    pt := C.zmq_producer_state_table_new(C.db_connector_t2(db.ptr), tableNameC, C.zmq_client_t(client.ptr))
+    return ZmqProducerStateTable{ptr: unsafe.Pointer(pt), table: tableName}
 }
 
-func (pt ProducerStateTable) Delete() {
-    C.producer_state_table_delete(C.producer_state_table_t(pt.ptr))
+func (pt ZmqProducerStateTable) Delete() {
+    C.zmq_producer_state_table_delete(C.zmq_producer_state_table_t(pt.ptr))
 }
 
-func (pt ProducerStateTable) SetBuffered(buffered bool) {
-    C.producer_state_table_set_buffered(C.producer_state_table_t(pt.ptr), C._Bool(buffered))
-}
-
-func (pt ProducerStateTable) Set(key string, values map[string]string, op string, prefix string) {
-    /*
+func (pt ZmqProducerStateTable) Set(key string, values map[string]string, op string, prefix string) {
     log.Printf(
         "trace: swss: %s %s:%s %s",
         op,
@@ -40,7 +41,6 @@ func (pt ProducerStateTable) Set(key string, values map[string]string, op string
         key,
         values,
     )
-    */
 
     keyC := C.CString(key)
     defer C.free(unsafe.Pointer(keyC))
@@ -68,18 +68,16 @@ func (pt ProducerStateTable) Set(key string, values map[string]string, op string
         idx = idx + 1
     }
 
-    C.producer_state_table_set(C.producer_state_table_t(pt.ptr), keyC, tuplePtr, C.size_t(count), opC, prefixC)
+    C.zmq_producer_state_table_set(C.zmq_producer_state_table_t(pt.ptr), keyC, tuplePtr, C.size_t(count), opC, prefixC)
 }
 
-func (pt ProducerStateTable) Del(key string, op string, prefix string) {
-    /*
+func (pt ZmqProducerStateTable) Del(key string, op string, prefix string) {
     log.Printf(
         "trace: swss: %s %s:%s",
         op,
         pt.table,
         key,
     )
-    */
 
     keyC := C.CString(key)
     defer C.free(unsafe.Pointer(keyC))
@@ -88,9 +86,5 @@ func (pt ProducerStateTable) Del(key string, op string, prefix string) {
     prefixC := C.CString(prefix)
     defer C.free(unsafe.Pointer(prefixC))
 
-    C.producer_state_table_del(C.producer_state_table_t(pt.ptr), keyC, opC, prefixC)
-}
-
-func (pt ProducerStateTable) Flush() {
-    C.producer_state_table_flush(C.producer_state_table_t(pt.ptr))
+    C.zmq_producer_state_table_del(C.zmq_producer_state_table_t(pt.ptr), keyC, opC, prefixC)
 }

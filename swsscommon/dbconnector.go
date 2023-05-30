@@ -27,6 +27,13 @@ func NewDBConnector2(db int, unixPath string, timeout uint) DBConnector {
     return DBConnector{ptr: unsafe.Pointer(dbc)}
 }
 
+func NewDBConnector3(dbName string, timeout uint, isTcpConn bool) DBConnector {
+    dbNameC := C.CString(dbName)
+    defer C.free(unsafe.Pointer(dbNameC))
+    dbc := C.db_connector_new3(dbNameC, C.uint(timeout), C._Bool(isTcpConn))
+    return DBConnector{ptr: unsafe.Pointer(dbc)}
+}
+
 func (db DBConnector) Delete() {
     C.db_connector_delete(C.db_connector_t(db.ptr))
 }
