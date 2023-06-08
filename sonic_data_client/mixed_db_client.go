@@ -138,7 +138,14 @@ func (c *MixedDbClient) DbSetTable(table string, key string, values map[string]s
 		pt = swsscommon.NewZmqProducerStateTable(c.applDB, table, c.zmqClient)
 		c.tableMap[table] = pt
 	}
-	pt.Set(key, values, "SET", "")
+	vec := swsscommon.NewFieldValuePairs()
+	defer swsscommon.DeleteFieldValuePairs(vec)
+	for k, v := range values {
+		pair := swsscommon.NewFieldValuePair(k, v)
+		vec.Add(pair)
+		swsscommon.DeleteFieldValuePair(pair)
+	}
+	pt.Set(key, vec, "SET", "")
 	return nil
 }
 
@@ -148,7 +155,7 @@ func (c *MixedDbClient) DbDelTable(table string, key string) error {
 		pt = swsscommon.NewZmqProducerStateTable(c.applDB, table, c.zmqClient)
 		c.tableMap[table] = pt
 	}
-	pt.Del(key, "DEL", "")
+	pt.Delete(key, "DEL", "")
 	return nil
 }
 
@@ -199,7 +206,7 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 	}
 	client.paths = paths
 	client.workPath = common_utils.GNMI_WORK_PATH
-	client.applDB = swsscommon.NewDBConnector3(APPL_DB_NAME, SWSS_TIMEOUT, false)
+	client.applDB = swsscommon.NewDBConnector(APPL_DB_NAME, SWSS_TIMEOUT, false)
 	client.tableMap = map[string]swsscommon.ZmqProducerStateTable{}
 
 	client.zmqClient = swsscommon.NewZmqClient(zmqAddress)
