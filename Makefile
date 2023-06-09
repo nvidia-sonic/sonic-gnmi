@@ -12,6 +12,8 @@ BUILD_DIR := build/bin
 export CVL_SCHEMA_PATH := $(MGMT_COMMON_DIR)/build/cvl/schema
 export GOBIN := $(abspath $(BUILD_DIR))
 export PATH := $(PATH):$(GOBIN):$(shell dirname $(GO))
+export CGO_LDFLAGS := -lswsscommon -lhiredis
+export CGO_CXXFLAGS := -I/usr/include/swss -w -Wall -fpermissive
 
 SRC_FILES=$(shell find . -name '*.go' | grep -v '_test.go' | grep -v '/tests/')
 TEST_FILES=$(wildcard *_test.go)
@@ -37,7 +39,7 @@ all: sonic-gnmi $(TELEMETRY_TEST_BIN)
 go.mod:
 	$(GO) mod init github.com/sonic-net/sonic-gnmi
 
-$(GO_DEPS): go.mod $(PATCHES)
+$(GO_DEPS): go.mod $(PATCHES) swsscommon_wrap
 	$(GO) mod vendor
 	$(GO) mod download golang.org/x/crypto@v0.0.0-20191206172530-e9b2fee46413
 	$(GO) mod download github.com/jipanyang/gnxi@v0.0.0-20181221084354-f0a90cca6fd0
@@ -57,7 +59,7 @@ go-deps: $(GO_DEPS)
 go-deps-clean:
 	$(RM) -r vendor
 
-sonic-gnmi: $(GO_DEPS) libswss
+sonic-gnmi: $(GO_DEPS) swsscommon_wrap
 ifeq ($(CROSS_BUILD_ENVIRON),y)
 	$(GO) build -o ${GOBIN}/telemetry -mod=vendor $(BLD_FLAGS) github.com/sonic-net/sonic-gnmi/telemetry
 	$(GO) build -o ${GOBIN}/dialout_client_cli -mod=vendor $(BLD_FLAGS) github.com/sonic-net/sonic-gnmi/dialout/dialout_client_cli
@@ -77,9 +79,8 @@ else
 endif
 
 # TODO: Create a new repo for this lib, sonic-restapi and sonic-gnmi can share this lib
-libswss:
-	make -C libcswsscommon
-	sudo make -C libcswsscommon install
+swsscommon_wrap:
+	make -C swsscommon
 
 check_gotest:
 	sudo mkdir -p ${DBDIR}
