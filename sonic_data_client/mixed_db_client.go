@@ -19,6 +19,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	log "github.com/golang/glog"
+	"github.com/golang/protobuf/proto"
 	"github.com/Workiva/go-datastructures/queue"
 	"github.com/sonic-net/sonic-gnmi/common_utils"
 	"github.com/sonic-net/sonic-gnmi/swsscommon"
@@ -32,6 +33,7 @@ const REDIS_SOCK string = "/var/run/redis/redis.sock"
 const APPL_DB int = 0
 const APPL_DB_NAME string = "APPL_DB"
 const SWSS_TIMEOUT uint = 0
+const DASH_ROUTE_TBL_NAME = "DASH_ROUTE_TABLE"
 
 const (
     opAdd = iota
@@ -286,10 +288,6 @@ func (c *MixedDbClient) populateDbtablePath(path *gnmipb.Path, value *gnmipb.Typ
 		}
 		dbPath = buffer.String()
 	}
-	value_str := ""
-	if value != nil {
-		value_str = string(value.GetJsonIetfVal())
-	}
 
 	tblPath.dbNamespace = dbNamespace
 	tblPath.dbName = targetDbName
@@ -297,9 +295,21 @@ func (c *MixedDbClient) populateDbtablePath(path *gnmipb.Path, value *gnmipb.Typ
 	tblPath.delimitor = separator
 	tblPath.operation = opRemove
 	tblPath.index = -1
+	tblPath.jsonValue = ""
 	if value != nil {
 		tblPath.operation = opAdd
-		tblPath.value = value_str
+		jv := value.GetJsonIetfVal()
+		if jv != nil {
+			tblPath.jsonValue = string(jv)
+		}
+		pv := value.GetProtoBytes()
+		if pv != nil {
+			tblPath.protoValue = string(pv)
+		}
+		if jv == nil && pv == nil {
+			return fmt.Errorf("Unsupported TypedValue: %v", value)
+		}
+
 	}
 
 	var mappedKey string
@@ -613,8 +623,11 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 			}
 		} else if tblPath.operation == opAdd {
 			if tblPath.tableKey != "" {
+				if len(tblPath.jsonValue) == 0 {
+					return fmt.Errorf("Json value is not valid: %v", tblPath)
+				}
 				// both table name and key provided
-				res, err = parseJson([]byte(tblPath.value))
+				res, err = parseJson([]byte(tblPath.jsonValue))
 				if err != nil {
 					return err
 				}
@@ -643,37 +656,89 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 					return fmt.Errorf("Key %v: Unsupported value %v type %v", tblPath.tableKey, res, reflect.TypeOf(res))
 				}
 			} else {
-				res, err = parseJson([]byte(tblPath.value))
-				if err != nil {
-					return err
-				}
-				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					configMap[tblPath.tableName] = vtable
-					ietf_json_val, err := emitJSON(&configMap)
+				if len(tblPath.jsonValue) > 0 {
+					res, err = parseJson([]byte(tblPath.jsonValue))
 					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
+						return err
 					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
-					}
-					for tableKey, tres := range vtable {
-						if vt, ret := tres.(map[string]interface{}); ret {
-							outputData := ConvertDbEntry(vt)
-							c.DbDelTable(tblPath.tableName, tableKey)
-							err = c.DbSetTable(tblPath.tableName, tableKey, outputData)
-							if err != nil {
-								log.V(2).Infof("swsscommon update failed for  %v, value %v", tblPath, outputData)
-								return err
+					if vtable, ok := res.(map[string]interface{}); ok {
+						configMap := make(map[string]interface{})
+						configMap[tblPath.tableName] = vtable
+						ietf_json_val, err := emitJSON(&configMap)
+						if err != nil {
+							return fmt.Errorf("Translate to json failed!")
+						}
+						PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
+						err = RunPyCode(PyCodeInGo)
+						if err != nil {
+							return fmt.Errorf("Yang validation failed!")
+						}
+						for tableKey, tres := range vtable {
+							if vt, ret := tres.(map[string]interface{}); ret {
+								outputData := ConvertDbEntry(vt)
+								c.DbDelTable(tblPath.tableName, tableKey)
+								err = c.DbSetTable(tblPath.tableName, tableKey, outputData)
+								if err != nil {
+									log.V(2).Infof("swsscommon update failed for  %v, value %v", tblPath, outputData)
+									return err
+								}
+							} else {
+								return fmt.Errorf("Key %v: Unsupported value %v type %v", tableKey, tres, reflect.TypeOf(tres))
 							}
-						} else {
-							return fmt.Errorf("Key %v: Unsupported value %v type %v", tableKey, tres, reflect.TypeOf(tres))
+						}
+					} else {
+						return fmt.Errorf("Unsupported value %v type %v", res, reflect.TypeOf(res))
+					}
+				} else if len(tblPath.protoValue) > 0 {
+					if tblPath.tableName != DASH_ROUTE_TBL_NAME {
+						return fmt.Errorf("Protobuf encoding only supports %v, no support for %v", DASH_ROUTE_TBL_NAME, tblPath.tableName)
+					}
+					table := &spb.DashRouteTable{}
+					err := proto.Unmarshal([]byte(tblPath.protoValue), table)
+					if err != nil {
+						log.V(2).Infof("Failed to parse protobuf: %v", tblPath)
+						return err
+					}
+					// TODO: Need Yang validation for DASH table in memory
+					for _, route := range table.Routes {
+						tableKey := route.Eni + ":" + route.Prefix
+						tableData := make(map[string] string)
+						if len(route.IpVersion) > 0 {
+							tableData["ip_version"] = route.IpVersion
+						}
+						if len(route.RoutingType) > 0 {
+							tableData["routing_type"] = route.RoutingType
+						}
+						if len(route.Vnet) > 0 {
+							tableData["vnet"] = route.Vnet
+						}
+						if len(route.CustomerAddr) > 0 {
+							tableData["customer_addr"] = route.CustomerAddr
+						}
+						if len(route.Appliance) > 0 {
+							tableData["appliance"] = route.Appliance
+						}
+						if len(route.UnderlayIp) > 0 {
+							tableData["underlay_ip"] = route.UnderlayIp
+						}
+						if len(route.OverlaySip) > 0 {
+							tableData["overlay_sip"] = route.OverlaySip
+						}
+						if len(route.OverlayDip) > 0 {
+							tableData["overlay_dip"] = route.OverlayDip
+						}
+						if len(route.MeteringBucket) > 0 {
+							tableData["metering_bucket"] = route.MeteringBucket
+						}
+						c.DbDelTable(tblPath.tableName, tableKey)
+						err = c.DbSetTable(tblPath.tableName, tableKey, tableData)
+						if err != nil {
+							log.V(2).Infof("swsscommon update failed for  %v, %v", tableKey, tableData)
+							return err
 						}
 					}
 				} else {
-					return fmt.Errorf("Unsupported value %v type %v", res, reflect.TypeOf(res))
+					return fmt.Errorf("No valid value: %v", tblPath)
 				}
 			}
 		} else {

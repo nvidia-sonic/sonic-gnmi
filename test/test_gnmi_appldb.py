@@ -3,6 +3,12 @@ import json
 from utils import gnmi_set, gnmi_get, gnmi_get_with_encoding
 
 import pytest
+import sys
+import os
+import inspect
+
+sys.path.append(os.path.realpath(os.path.join(os.path.dirname(inspect.getfile(inspect.currentframe())), '../proto')))
+import dash_pb2
 
 
 test_data_update_normal = [
@@ -195,6 +201,47 @@ class TestGNMIApplDb:
                 continue
             for msg in msg_list:
                 assert msg == '{}', 'Delete failed'
+
+    def test_gnmi_protobuf_01(self):
+        path = '/sonic-db:APPL_DB/DASH_ROUTE_TABLE'
+        get_path = '/sonic-db:APPL_DB/_DASH_ROUTE_TABLE'
+        eni_name = "F4939FEFC47E"
+        prefix1 = "10.0.250.11\\\\/32"
+        prefix2 = "10.0.250.22\\\\/32"
+        table = dash_pb2.DashRouteTable()
+        rt1 = table.routes.add()
+        rt1.eni = eni_name
+        rt1.prefix = prefix1
+        rt1.routing_type = "vnet"
+        rt1.vnet = "Vnet00001"
+        rt2 = table.routes.add()
+        rt2.eni = eni_name
+        rt2.prefix = prefix2
+        rt2.routing_type = "vnet"
+        rt2.vnet = "Vnet00002"
+        update_list = []
+        text = table.SerializeToString()
+        file_name = 'update.txt'
+        file_object = open(file_name, 'wb')
+        file_object.write(text)
+        file_object.close()
+        update_list = [path + ':$./' + file_name]
+
+        ret, msg = gnmi_set([], update_list, [])
+        assert ret == 0, msg
+
+        get_list = [get_path]
+        ret, msg_list = gnmi_get(get_list)
+        assert ret == 0, 'Invalid return code'
+        assert len(msg_list), 'Invalid msg: ' + str(msg_list)
+        for msg in msg_list:
+            assert eni_name in msg, 'Invalid msg: ' + msg
+        delete_list = [
+            get_path + '/' + eni_name + ':' + prefix1,
+            get_path + '/' + eni_name + ':' + prefix2
+        ]
+        ret, msg = gnmi_set(delete_list, [], [])
+        assert ret == 0, msg
 
     def test_gnmi_invalid_path_01(self):
         path = '/sonic-db:APPL_DB/DASH_QOS/qos_01/bw'
@@ -408,7 +455,7 @@ class TestGNMIApplDb:
     def test_gnmi_invalid_encoding(self):
         path = '/sonic-db:APPL_DB/DASH_QOS'
         get_list = [path]
-        ret, msg_list = gnmi_get_with_encoding(get_list, "PROTO")
+        ret, msg_list = gnmi_get_with_encoding(get_list, "ASCII")
         assert ret != 0, 'Encoding is not supported'
         hit = False
         exp = 'unsupported encoding'
