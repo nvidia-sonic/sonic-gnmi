@@ -77,7 +77,7 @@ type MixedDbClient struct {
 
 var mixedDbClientMap = map[string]MixedDbClient{}
 
-func getMexedDbClient(zmqAddress string) (MixedDbClient) {
+func getMixedDbClient(zmqAddress string) (MixedDbClient) {
 	client, ok := mixedDbClientMap[zmqAddress]
 	if !ok {
 		client = MixedDbClient {
@@ -249,7 +249,7 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 		useRedisTcpClient()
 	}
 
-	var client = getMexedDbClient(zmqAddress)
+	var client = getMixedDbClient(zmqAddress)
 	client.prefix = prefix
 	client.target = ""
 	client.origin = ""
