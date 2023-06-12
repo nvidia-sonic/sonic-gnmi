@@ -173,12 +173,14 @@ func CatchException(err *error) {
 }
 
 func ProducerStateTableSetWrapper(pt swsscommon.ProducerStateTable, key string, value swsscommon.FieldValuePairs) (err error) {
+	// convert panic to error
 	defer CatchException(&err)
 	pt.Set(key, value, "SET", "")
 	return
 }
 
 func ProducerStateTableDeleteWrapper(pt swsscommon.ProducerStateTable, key string) (err error) {
+	// convert panic to error
 	defer CatchException(&err)
 	pt.Delete(key, "DEL", "")
 	return
