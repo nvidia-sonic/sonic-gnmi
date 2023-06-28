@@ -20,6 +20,7 @@ import (
 	"google.golang.org/grpc/status"
 	log "github.com/golang/glog"
 	"github.com/Workiva/go-datastructures/queue"
+	"github.com/sonic-net/sonic-gnmi/common_utils"
 	"github.com/sonic-net/sonic-gnmi/swsscommon"
 	sdcfg "github.com/sonic-net/sonic-gnmi/sonic_db_config"
 	spb "github.com/sonic-net/sonic-gnmi/proto"
@@ -83,8 +84,15 @@ func getMixedDbClient(zmqAddress string) (MixedDbClient) {
 		client = MixedDbClient {
 			applDB : swsscommon.NewDBConnector(APPL_DB_NAME, SWSS_TIMEOUT, false),
 			tableMap : map[string]swsscommon.ProducerStateTable{},
-			zmqClient : swsscommon.NewZmqClient(zmqAddress),
 		}
+
+		// enable ZMQ by zmqAddress parameter
+		if zmqAddress != "" {
+			client.zmqClient = swsscommon.NewZmqClient(zmqAddress)
+		} else {
+			client.zmqClient = nil
+		}
+		
 		mixedDbClientMap[zmqAddress] = client
 	}
 
@@ -154,9 +162,11 @@ func IsSupportedOrigin(origin string) bool {
 func (c *MixedDbClient) GetTable(table string) (swsscommon.ProducerStateTable) {
 	pt, ok := c.tableMap[table]
 	if !ok {
-		if strings.HasPrefix(table, DASH_TABLE_PREFIX) {
+		if strings.HasPrefix(table, DASH_TABLE_PREFIX) && c.zmqClient != nil {
+			log.V(2).Infof("Create ZmqProducerStateTable:  %s", table)
 			pt = swsscommon.NewZmqProducerStateTable(c.applDB, table, c.zmqClient)
 		} else {
+			log.V(2).Infof("Create ProducerStateTable:  %s", table)
 			pt = swsscommon.NewProducerStateTable(c.applDB, table)
 		}
 
@@ -287,6 +297,7 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 		return nil, status.Errorf(codes.Unimplemented, "Invalid target: %s", client.target)
 	}
 	client.paths = paths
+	client.workPath = common_utils.GNMI_WORK_PATH
 
 	return &client, nil
 }
