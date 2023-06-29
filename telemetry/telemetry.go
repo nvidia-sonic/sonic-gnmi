@@ -21,7 +21,7 @@ var (
 	caCert            = flag.String("ca_crt", "", "CA certificate for client certificate validation. Optional.")
 	serverCert        = flag.String("server_crt", "", "TLS server certificate")
 	serverKey         = flag.String("server_key", "", "TLS server private key")
-	zmqAddress        = flag.String("zmq_address", "", "ZMQ address")
+	zmqAddress        = flag.String("zmq_address", "", "Orchagent ZMQ address, When not set or empty string telemetry server will switch to Redis based communication channel.")
 	insecure          = flag.Bool("insecure", false, "Skip providing TLS cert and key, for testing only!")
 	noTLS             = flag.Bool("noTLS", false, "disable TLS, for testing only!")
 	allowNoClientCert = flag.Bool("allow_no_client_auth", false, "When set, telemetry server will request but not require a client certificate.")
