@@ -35,7 +35,7 @@ const DASH_TABLE_PREFIX string = "DASH_"
 const SWSS_TIMEOUT uint = 0
 const MAX_RETRY_COUNT uint = 5
 const RETYRY_DELAY_MILLISECOND uint = 100
-
+const CHECK_POINT_PATH string = "/etc/sonic"
 
 const (
     opAdd = iota
@@ -44,11 +44,6 @@ const (
 
 var (
 	supportedModels = []gnmipb.ModelData{
-		{
-			Name:         "sonic-yang",
-			Organization: "SONiC",
-			Version:      "0.1.0",
-		},
 		{
 			Name:         "sonic-db",
 			Organization: "SONiC",
@@ -129,34 +124,6 @@ func ParseTarget(target string, paths []*gnmipb.Path) (string, error) {
 		return "", status.Error(codes.Unimplemented, "No target specified in path")
 	}
 	return target, nil
-}
-
-func ParseOrigin(origin string, paths []*gnmipb.Path) (string, error) {
-	if len(paths) == 0 {
-		return origin, nil
-	}
-	for i, path := range paths {
-		if origin == "" {
-			if i == 0 {
-				origin = path.Origin
-			}
-		} else if origin != path.Origin {
-			return "", status.Error(codes.Unimplemented, "Origin conflict in path")
-		}
-	}
-	if origin == "" {
-		return origin, status.Error(codes.Unimplemented, "No origin specified in path")
-	}
-	return origin, nil
-}
-
-func IsSupportedOrigin(origin string) bool {
-	for _, model := range supportedModels {
-		if model.Name == origin {
-			return true
-		}
-	}
-	return false
 }
 
 func (c *MixedDbClient) GetTable(table string) (swsscommon.ProducerStateTable) {
@@ -251,7 +218,7 @@ func (c *MixedDbClient) DbDelTable(table string, key string) error {
 	return nil
 }
 
-func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress string) (Client, error) {
+func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, origin string, zmqAddress string) (Client, error) {
 	var err error
 
 	// Testing program may ask to use redis local tcp connection
@@ -262,13 +229,12 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 	var client = getMixedDbClient(zmqAddress)
 	client.prefix = prefix
 	client.target = ""
-	client.origin = ""
+	client.origin = origin
 	if prefix != nil {
 		elems := prefix.GetElem()
 		if elems != nil {
 			client.target = elems[0].GetName()
 		}
-		client.origin = prefix.Origin
 	}
 	if paths == nil {
 		return &client, nil
@@ -279,18 +245,6 @@ func NewMixedDbClient(paths []*gnmipb.Path, prefix *gnmipb.Path, zmqAddress stri
 		if err != nil {
 			return nil, err
 		}
-	}
-	if client.origin == "" {
-		client.origin, err = ParseOrigin(client.origin, paths)
-		if err != nil {
-			return nil, err
-		}
-	}
-	if check := IsSupportedOrigin(client.origin); !check {
-		return nil, status.Errorf(codes.Unimplemented, "Invalid origin: %s", client.origin)
-	}
-	if client.origin == "sonic-yang" {
-		return nil, status.Errorf(codes.Unimplemented, "SONiC Yang Schema is not implemented yet")
 	}
 	_, ok, _, _ := IsTargetDb(client.target); 
 	if !ok {
@@ -706,19 +660,6 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 					return err
 				}
 				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					tableMap := make(map[string]interface{})
-					tableMap[tblPath.tableKey] = vtable
-					configMap[tblPath.tableName] = tableMap
-					ietf_json_val, err := emitJSON(&configMap)
-					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
-					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
-					}
 					outputData := ConvertDbEntry(vtable)
 					c.DbDelTable(tblPath.tableName, tblPath.tableKey)
 					err = c.DbSetTable(tblPath.tableName, tblPath.tableKey, outputData)
@@ -735,17 +676,6 @@ func (c *MixedDbClient) handleTableData(tblPaths []tablePath) error {
 					return err
 				}
 				if vtable, ok := res.(map[string]interface{}); ok {
-					configMap := make(map[string]interface{})
-					configMap[tblPath.tableName] = vtable
-					ietf_json_val, err := emitJSON(&configMap)
-					if err != nil {
-						return fmt.Errorf("Translate to json failed!")
-					}
-					PyCodeInGo := fmt.Sprintf(PyCodeForYang, ietf_json_val)
-					err = RunPyCode(PyCodeInGo)
-					if err != nil {
-						return fmt.Errorf("Yang validation failed!")
-					}
 					for tableKey, tres := range vtable {
 						if vt, ret := tres.(map[string]interface{}); ret {
 							outputData := ConvertDbEntry(vt)
@@ -862,12 +792,12 @@ func (c *MixedDbClient) SetIncrementalConfig(delete []*gnmipb.Path, replace []*g
 	if err != nil {
 		return err
 	}
-	err = sc.CreateCheckPoint(c.workPath + "/config")
+	err = sc.CreateCheckPoint(CHECK_POINT_PATH + "/config")
 	if err != nil {
 		return err
 	}
-	defer sc.DeleteCheckPoint(c.workPath + "/config")
-	fileName := c.workPath + "/config.cp.json"
+	defer sc.DeleteCheckPoint(CHECK_POINT_PATH + "/config")
+	fileName := CHECK_POINT_PATH + "/config.cp.json"
 	c.jClient, err = NewJsonClient(fileName)
 	if err != nil {
 		return err
@@ -991,7 +921,7 @@ func (c *MixedDbClient) SetIncrementalConfig(delete []*gnmipb.Path, replace []*g
 	}
 
 	if c.origin == "sonic-db" {
-		err = sc.ApplyPatchDb(patchFile)
+		err = sc.ApplyPatchDb(text)
 	}
 
 	if err == nil {
@@ -1101,7 +1031,7 @@ func (c *MixedDbClient) GetCheckPoint() ([]*spb.Value, error) {
 	var err error
 	ts := time.Now()
 
-	fileName := c.workPath + "/config.cp.json"
+	fileName := CHECK_POINT_PATH + "/config.cp.json"
 	c.jClient, err = NewJsonClient(fileName)
 	if err != nil {
 		return nil, fmt.Errorf("There's no check point")
@@ -1196,9 +1126,6 @@ func (c *MixedDbClient) Capabilities() []gnmipb.ModelData {
 }
 
 func (c *MixedDbClient) Close() error {
-	for _, pt := range c.tableMap {
-		pt.Delete()
-	}
 	return nil
 }
 

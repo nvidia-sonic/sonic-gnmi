@@ -138,8 +138,6 @@ func main() {
 	cfg := &gnmi.Config{}
 	cfg.Port = int64(*port)
 	cfg.UserAuth = userAuth
-	cfg.EnableTranslibWrite = bool(*gnmi_translib_write)
-	cfg.EnableNativeWrite = bool(*gnmi_native_write)
 
 	gnmi.GenerateJwtSecretKey()
 }

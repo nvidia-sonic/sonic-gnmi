@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"os"
 	"github.com/Azure/sonic-mgmt-common/translib"
 	"github.com/sonic-net/sonic-gnmi/common_utils"
 	spb "github.com/sonic-net/sonic-gnmi/proto"
@@ -127,10 +126,6 @@ func NewServer(config *Config, opts []grpc.ServerOption) (*Server, error) {
 		return nil, errors.New("config not provided")
 	}
 
-	if config.EnableNativeWrite {
-		os.RemoveAll(common_utils.GNMI_WORK_PATH)
-		os.MkdirAll(common_utils.GNMI_WORK_PATH, 0777)
-	}
 	common_utils.InitCounters()
 
 	s := grpc.NewServer(opts...)
@@ -283,64 +278,84 @@ func (s *Server) checkEncodingAndModel(encoding gnmipb.Encoding, models []*gnmip
 	return nil
 }
 
+func ParseOrigin(paths []*gnmipb.Path) (string, error) {
+	origin := ""
+	if len(paths) == 0 {
+		return origin, nil
+	}
+	for i, path := range paths {
+		if i == 0 {
+			origin = path.Origin
+		} else {
+			if origin != path.Origin {
+				return "", status.Error(codes.Unimplemented, "Origin conflict in path")
+			}
+		}
+	}
+	return origin, nil
+}
+
+func IsNativeOrigin(origin string) bool {
+	return origin == "sonic-db"
+}
+
 // Get implements the Get RPC in gNMI spec.
 func (s *Server) Get(ctx context.Context, req *gnmipb.GetRequest) (*gnmipb.GetResponse, error) {
-	common_utils.IncCounter("GNMI get")
+	common_utils.IncCounter(common_utils.GNMI_GET)
 	ctx, err := authenticate(s.config.UserAuth, ctx)
 	if err != nil {
-		common_utils.IncCounter("GNMI get fail")
+		common_utils.IncCounter(common_utils.GNMI_GET_FAIL)
 		return nil, err
 	}
 
 	if req.GetType() != gnmipb.GetRequest_ALL {
-		common_utils.IncCounter("GNMI get fail")
+		common_utils.IncCounter(common_utils.GNMI_GET_FAIL)
 		return nil, status.Errorf(codes.Unimplemented, "unsupported request type: %s", gnmipb.GetRequest_DataType_name[int32(req.GetType())])
 	}
 
 	if err = s.checkEncodingAndModel(req.GetEncoding(), req.GetUseModels()); err != nil {
-		common_utils.IncCounter("GNMI get fail")
+		common_utils.IncCounter(common_utils.GNMI_GET_FAIL)
 		return nil, status.Error(codes.Unimplemented, err.Error())
 	}
 
-	var target string
+	target := ""
 	prefix := req.GetPrefix()
-	if prefix == nil {
-		common_utils.IncCounter("GNMI get fail")
-		return nil, status.Error(codes.Unimplemented, "No target specified in prefix")
-	} else {
+	if prefix != nil {
 		target = prefix.GetTarget()
-		if target == "" {
-			common_utils.IncCounter("GNMI get fail")
-			return nil, status.Error(codes.Unimplemented, "Empty target data not supported yet")
-		}
 	}
 
 	paths := req.GetPath()
 	extensions := req.GetExtension()
-	target = prefix.GetTarget()
-	log.V(5).Infof("GetRequest paths: %v", paths)
+	log.V(2).Infof("GetRequest paths: %v", paths)
 
 	var dc sdc.Client
 
 	if target == "OTHERS" {
 		dc, err = sdc.NewNonDbClient(paths, prefix)
-	} else if target == "MIXED" {
-		dc, err = sdc.NewMixedDbClient(paths, prefix, s.config.ZmqAddress)
 	} else if _, ok, _, _ := sdc.IsTargetDb(target); ok {
 		dc, err = sdc.NewDbClient(paths, prefix)
 	} else {
-		/* If no prefix target is specified create new Transl Data Client . */
-		dc, err = sdc.NewTranslClient(prefix, paths, ctx, extensions)
+		origin := ""
+		origin, err = ParseOrigin(paths)
+		if err != nil {
+			return nil, err
+		}
+		if check := IsNativeOrigin(origin); check {
+			dc, err = sdc.NewMixedDbClient(paths, prefix, origin, s.config.ZmqAddress)
+		} else {
+			dc, err = sdc.NewTranslClient(prefix, paths, ctx, extensions)
+		}
 	}
 
 	if err != nil {
-		common_utils.IncCounter("GNMI get fail")
+		common_utils.IncCounter(common_utils.GNMI_GET_FAIL)
 		return nil, status.Error(codes.NotFound, err.Error())
 	}
+	defer dc.Close()
 	notifications := make([]*gnmipb.Notification, len(paths))
 	spbValues, err := dc.Get(nil)
 	if err != nil {
-		common_utils.IncCounter("GNMI get fail")
+		common_utils.IncCounter(common_utils.GNMI_GET_FAIL)
 		return nil, status.Error(codes.NotFound, err.Error())
 	}
 
@@ -360,56 +375,54 @@ func (s *Server) Get(ctx context.Context, req *gnmipb.GetRequest) (*gnmipb.GetRe
 }
 
 func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetResponse, error) {
-	common_utils.IncCounter("GNMI set")
+	common_utils.IncCounter(common_utils.GNMI_SET)
 	if s.config.EnableTranslibWrite == false && s.config.EnableNativeWrite == false {
-		common_utils.IncCounter("GNMI set fail")
+		common_utils.IncCounter(common_utils.GNMI_SET_FAIL)
 		return nil, grpc.Errorf(codes.Unimplemented, "GNMI is in read-only mode")
 	}
 	ctx, err := authenticate(s.config.UserAuth, ctx)
 	if err != nil {
-		common_utils.IncCounter("GNMI set fail")
+		common_utils.IncCounter(common_utils.GNMI_SET_FAIL)
 		return nil, err
 	}
 	var results []*gnmipb.UpdateResult
 
 	/* Fetch the prefix. */
 	prefix := req.GetPrefix()
-	var target string
-	if prefix == nil {
-		common_utils.IncCounter("GNMI set fail")
-		return nil, status.Error(codes.Unimplemented, "No target specified in prefix")
-	} else {
-		target = prefix.GetTarget()
-	}
 	extensions := req.GetExtension()
 
 	var dc sdc.Client
-	if target == "MIXED" {
+	paths := req.GetDelete()
+	for _, path := range req.GetReplace() {
+		paths = append(paths, path.GetPath())
+	}
+	for _, path := range req.GetUpdate() {
+		paths = append(paths, path.GetPath())
+	}
+	origin, err := ParseOrigin(paths)
+	if err != nil {
+		return nil, err
+	}
+	if check := IsNativeOrigin(origin); check {
 		if s.config.EnableNativeWrite == false {
-			common_utils.IncCounter("GNMI set fail")
-			return nil, grpc.Errorf(codes.Unimplemented, "Mixed schema is disabled")
+			common_utils.IncCounter(common_utils.GNMI_SET_FAIL)
+			return nil, grpc.Errorf(codes.Unimplemented, "GNMI native write is disabled")
 		}
-		paths := req.GetDelete()
-		for _, path := range req.GetReplace() {
-			paths = append(paths, path.GetPath())
-		}
-		for _, path := range req.GetUpdate() {
-			paths = append(paths, path.GetPath())
-		}
-		dc, err = sdc.NewMixedDbClient(paths, prefix, s.config.ZmqAddress)
+		dc, err = sdc.NewMixedDbClient(paths, prefix, origin, s.config.ZmqAddress)
 	} else {
 		if s.config.EnableTranslibWrite == false {
-			common_utils.IncCounter("GNMI set fail")
-			return nil, grpc.Errorf(codes.Unimplemented, "Telemetry is in read-only mode")
+			common_utils.IncCounter(common_utils.GNMI_SET_FAIL)
+			return nil, grpc.Errorf(codes.Unimplemented, "Translib write is disabled")
 		}
 		/* Create Transl client. */
 		dc, err = sdc.NewTranslClient(prefix, nil, ctx, extensions)
 	}
 
 	if err != nil {
-		common_utils.IncCounter("GNMI set fail")
+		common_utils.IncCounter(common_utils.GNMI_SET_FAIL)
 		return nil, status.Error(codes.NotFound, err.Error())
 	}
+	defer dc.Close()
 
 	/* DELETE */
 	for _, path := range req.GetDelete() {
@@ -422,7 +435,6 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 
 		/* Add to Set response results. */
 		results = append(results, &res)
-
 	}
 
 	/* REPLACE */
@@ -450,7 +462,7 @@ func (s *Server) Set(ctx context.Context, req *gnmipb.SetRequest) (*gnmipb.SetRe
 	}
 	err = dc.Set(req.GetDelete(), req.GetReplace(), req.GetUpdate())
 	if err != nil {
-		common_utils.IncCounter("GNMI set fail")
+		common_utils.IncCounter(common_utils.GNMI_SET_FAIL)
 	}
 
 	return &gnmipb.SetResponse{
@@ -471,7 +483,7 @@ func (s *Server) Capabilities(ctx context.Context, req *gnmipb.CapabilityRequest
 	var supportedModels []gnmipb.ModelData
 	dc, _ := sdc.NewTranslClient(nil, nil, ctx, extensions)
 	supportedModels = append(supportedModels, dc.Capabilities()...)
-	dc, _ = sdc.NewMixedDbClient(nil, nil, s.config.ZmqAddress)
+	dc, _ = sdc.NewMixedDbClient(nil, nil, "", s.config.ZmqAddress)
 	supportedModels = append(supportedModels, dc.Capabilities()...)
 
 	suppModels := make([]*gnmipb.ModelData, len(supportedModels))
