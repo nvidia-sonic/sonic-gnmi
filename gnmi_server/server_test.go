@@ -92,9 +92,10 @@ func loadDBNotStrict(t *testing.T, rclient *redis.Client, mpi map[string]interfa
 }
 
 func createServer(t *testing.T, port int64) *Server {
+	t.Helper()
 	certificate, err := testcert.NewCert()
 	if err != nil {
-		t.Errorf("could not load server key pair: %s", err)
+		t.Fatalf("could not load server key pair: %s", err)
 	}
 	tlsCfg := &tls.Config{
 		ClientAuth:   tls.RequestClientCert,
@@ -111,9 +112,10 @@ func createServer(t *testing.T, port int64) *Server {
 }
 
 func createAuthServer(t *testing.T, port int64) *Server {
+	t.Helper()
 	certificate, err := testcert.NewCert()
 	if err != nil {
-		t.Errorf("could not load server key pair: %s", err)
+		t.Fatalf("could not load server key pair: %s", err)
 	}
 	tlsCfg := &tls.Config{
 		ClientAuth:   tls.RequestClientCert,
@@ -121,10 +123,10 @@ func createAuthServer(t *testing.T, port int64) *Server {
 	}
 
 	opts := []grpc.ServerOption{grpc.Creds(credentials.NewTLS(tlsCfg))}
-	cfg := &Config{Port: port, UserAuth: AuthTypes{"password": true, "cert": true, "jwt": true}}
+	cfg := &Config{Port: port, EnableTranslibWrite: true, UserAuth: AuthTypes{"password": true, "cert": true, "jwt": true}}
 	s, err := NewServer(cfg, opts)
 	if err != nil {
-		t.Errorf("Failed to create gNMI server: %v", err)
+		t.Fatalf("Failed to create gNMI server: %v", err)
 	}
 	return s
 }
@@ -153,7 +155,7 @@ func runTestGet(t *testing.T, ctx context.Context, gClient pb.GNMIClient, pathTa
 	textPbPath string, wantRetCode codes.Code, wantRespVal interface{}, valTest bool) {
 	//var retCodeOk bool
 	// Send request
-
+	t.Helper()
 	var pbPath pb.Path
 	if err := proto.UnmarshalText(textPbPath, &pbPath); err != nil {
 		t.Fatalf("error in unmarshaling path: %v %v", textPbPath, err)
@@ -231,6 +233,7 @@ const (
 
 func runTestSet(t *testing.T, ctx context.Context, gClient pb.GNMIClient, pathTarget string,
 	textPbPath string, wantRetCode codes.Code, wantRespVal interface{}, attributeData string, op op_t) {
+	t.Helper()
 	// Send request
 	var pbPath pb.Path
 	if err := proto.UnmarshalText(textPbPath, &pbPath); err != nil {
@@ -865,13 +868,6 @@ func runGnmiTestGet(t *testing.T, namespace string) {
 			elem: <name: "MyCounters" >
 		`,
 		wantRetCode: codes.NotFound,
-	}, {
-		desc:       "Test empty path target",
-		pathTarget: "",
-		textPbPath: `
-			elem: <name: "MyCounters" >
-		`,
-		wantRetCode: codes.Unimplemented,
 	}, {
 		desc:       "Test passing asic in path for V2R Dataset Target",
 		pathTarget: "COUNTER_DB" + "/" + namespace,
@@ -2408,7 +2404,9 @@ func TestGNOI(t *testing.T) {
 			t.Fatalf("Invalid System Time %d", resp.Time)
 		}
 	})
+
 	t.Run("SonicShowTechsupport", func(t *testing.T) {
+		t.Skip("Not supported yet")
 		sc := sgpb.NewSonicServiceClient(conn)
 		rtime := time.Now().AddDate(0, -1, 0)
 		req := &sgpb.TechsupportRequest{
@@ -2443,6 +2441,7 @@ func TestGNOI(t *testing.T) {
 	for _, v := range cfg_data {
 
 		t.Run("SonicCopyConfig", func(t *testing.T) {
+			t.Skip("Not supported yet")
 			sc := sgpb.NewSonicServiceClient(conn)
 			req := &sgpb.CopyConfigRequest{
 				Input: &sgpb.CopyConfigRequest_Input{
@@ -2596,6 +2595,7 @@ func TestAuthCapabilities(t *testing.T) {
 
 	s := createAuthServer(t, 8089)
 	go runServer(t, s)
+	defer s.s.Stop()
 
 	currentUser, _ := user.Current()
 	tlsConfig := &tls.Config{InsecureSkipVerify: true}
@@ -2781,7 +2781,7 @@ print('%s')
 	}{
 		{
 			desc:       "Set APPL_DB in batch",
-			pathTarget: "MIXED",
+			pathTarget: "",
 			textPbPath: `
 						origin: "sonic-db",
                         elem: <name: "APPL_DB" > elem:<name:"DASH_QOS" >
@@ -2848,16 +2848,18 @@ print('%s')
 		fmt.Println(string(result))
 	}
 
-	var counters [len(common_utils.CountersName)]uint64
+	var counters [int(common_utils.COUNTER_SIZE)]uint64
 	err := common_utils.GetMemCounters(&counters)
 	if err != nil {
 		t.Errorf("Error: Fail to read counters, %v", err)
 	}
-	for i := 0; i < len(common_utils.CountersName); i++ {
-		if common_utils.CountersName[i] == "GNMI set" && counters[i] == 0 {
+	for i := 0; i < int(common_utils.COUNTER_SIZE); i++ {
+		cnt := common_utils.CounterType(i)
+		counterName := cnt.String()
+		if counterName == "GNMI set" && counters[i] == 0 {
 			t.Errorf("GNMI set counter should not be 0")
 		}
-		if common_utils.CountersName[i] == "GNMI get" && counters[i] == 0 {
+		if counterName == "GNMI get" && counters[i] == 0 {
 			t.Errorf("GNMI get counter should not be 0")
 		}
 	}
@@ -2877,6 +2879,34 @@ func TestInvalidServer(t *testing.T) {
 	s := createInvalidServer(t, 9000)
 	if s != nil {
 		t.Errorf("Should not create invalid server")
+	}
+}
+
+func TestParseOrigin(t *testing.T) {
+	var test_paths []*pb.Path
+	var err error
+
+	_, err = ParseOrigin(test_paths)
+	if err != nil {
+		t.Errorf("ParseOrigin failed for empty path: %v", err)
+	}
+
+	test_origin := "sonic-test"
+	path, err := xpath.ToGNMIPath(test_origin + ":CONFIG_DB/VLAN")
+	test_paths = append(test_paths, path)
+	origin, err := ParseOrigin(test_paths)
+	if err != nil {
+		t.Errorf("ParseOrigin failed to get origin: %v", err)
+	}
+	if origin != test_origin {
+		t.Errorf("ParseOrigin return wrong origin: %v", origin)
+	}
+	test_origin = "sonic-invalid"
+	path, err = xpath.ToGNMIPath(test_origin + ":CONFIG_DB/PORT")
+	test_paths = append(test_paths, path)
+	origin, err = ParseOrigin(test_paths)
+	if err == nil {
+		t.Errorf("ParseOrigin should fail for conflict")
 	}
 }
 

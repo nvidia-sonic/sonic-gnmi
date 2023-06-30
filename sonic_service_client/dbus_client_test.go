@@ -4,7 +4,7 @@ import (
 	"testing"
 	"reflect"
 
-	"github.com/agiledragon/gomonkey"
+	"github.com/agiledragon/gomonkey/v2"
 	"github.com/godbus/dbus/v5"
 )
 
