@@ -75,6 +75,8 @@ type TelemetryConfig struct {
 	AuthzMetaFile         *string
 	AuthPolicyEnabled     *bool
 	AuthzPolicyFile       *string
+	RecvMsgSize           *int
+	SendMsgSize           *int
 }
 
 func main() {
@@ -200,6 +202,8 @@ func setupFlags(fs *flag.FlagSet) (*TelemetryConfig, *gnmi.Config, error) {
 		AuthzMetaFile:         fs.String("authz_meta", "/keys/authz-version.json", "authz policy metadata JSON file"),
 		AuthPolicyEnabled:     fs.Bool("authz_policy_enabled", false, "Enable authz policy. Require insecure flag to be false."),
 		AuthzPolicyFile:       fs.String("authorization_policy_file", "/keys/authorization_policy.json", "Full path name of the JSON authorization policy file."),
+		RecvMsgSize:           fs.Int("recv_msg_size", 0, "gRPC max receive message size in bytes. 0 uses gRPC default (4MB)."),
+		SendMsgSize:           fs.Int("send_msg_size", 0, "gRPC max send message size in bytes. 0 uses gRPC default (unlimited)."),
 	}
 
 	fs.Var(&telemetryCfg.UserAuth, "client_auth", "Client auth mode(s) - none,cert,password")
@@ -228,6 +232,13 @@ func setupFlags(fs *flag.FlagSet) (*TelemetryConfig, *gnmi.Config, error) {
 	switch {
 	case *telemetryCfg.Threshold < 0:
 		return nil, nil, fmt.Errorf("threshold must be >= 0.")
+	}
+
+	switch {
+	case *telemetryCfg.RecvMsgSize < 0:
+		return nil, nil, fmt.Errorf("recv_msg_size must be >= 0.")
+	case *telemetryCfg.SendMsgSize < 0:
+		return nil, nil, fmt.Errorf("send_msg_size must be >= 0.")
 	}
 
 	switch {
@@ -314,6 +325,8 @@ func setupFlags(fs *flag.FlagSet) (*TelemetryConfig, *gnmi.Config, error) {
 	cfg.AuthzMetaFile = string(*telemetryCfg.AuthzMetaFile)
 	cfg.AuthzPolicy = *telemetryCfg.AuthPolicyEnabled && !*telemetryCfg.Insecure
 	cfg.AuthzPolicyFile = string(*telemetryCfg.AuthzPolicyFile)
+	cfg.RecvMsgSize = *telemetryCfg.RecvMsgSize
+	cfg.SendMsgSize = *telemetryCfg.SendMsgSize
 	return telemetryCfg, cfg, nil
 }
 
@@ -563,6 +576,9 @@ func startGNMIServer(telemetryCfg *TelemetryConfig, cfg *gnmi.Config, serverCont
 
 		log.V(1).Infof("Auth Modes: %v", telemetryCfg.UserAuth)
 		log.V(1).Infof("Starting RPC server on address: %s", s.Address())
+		if cfg.RecvMsgSize > 0 || cfg.SendMsgSize > 0 {
+			log.V(1).Infof("gRPC buffer sizes: recv_msg_size=%d, send_msg_size=%d", cfg.RecvMsgSize, cfg.SendMsgSize)
+		}
 
 		go func() {
 			log.V(1).Infof("GNMI Server started serving")

@@ -233,6 +233,9 @@ type Config struct {
 	PathzPolicy     bool   // Enable gNMI pathz policy.
 	PathzPolicyFile string // Path to gNMI pathz policy file.
 	PathzMetaFile   string // Path to JSON file with pathz metadata.
+	// gRPC buffer sizes in bytes. 0 means use gRPC defaults (4MB for recv, unlimited for send).
+	RecvMsgSize int
+	SendMsgSize int
 }
 
 // DBusOSBackend is a concrete implementation of OSBackend
@@ -491,6 +494,14 @@ func NewServer(config *Config, tlsOpts []grpc.ServerOption, commonOpts []grpc.Se
 	}
 	var providers []certprovider.Provider
 	common_utils.InitCounters()
+
+	// Prepend gRPC buffer size options so they apply to both TCP and UDS servers.
+	if config.RecvMsgSize > 0 {
+		commonOpts = append([]grpc.ServerOption{grpc.MaxRecvMsgSize(config.RecvMsgSize)}, commonOpts...)
+	}
+	if config.SendMsgSize > 0 {
+		commonOpts = append([]grpc.ServerOption{grpc.MaxSendMsgSize(config.SendMsgSize)}, commonOpts...)
+	}
 
 	// Set authorization policy.
 	var authzWatcher *authz.FileWatcherInterceptor
