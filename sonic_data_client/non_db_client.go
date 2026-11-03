@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"strings"
 	"sync"
 	"time"
 
@@ -35,8 +36,25 @@ type path2DataFunc struct {
 
 type statsRing struct {
 	writeIdx uint64 // slot index to write next
-	buff     []*linuxproc.Stat
+	buff     []*cpuSample
 	mu       sync.RWMutex // Mutex for data protection
+}
+
+// cpuTicks holds the counters of one cpu line of /proc/stat that the
+// utilization rate is computed from.
+type cpuTicks struct {
+	total uint64 // user + nice + system + idle + iowait + irq + softirq + steal
+	idle  uint64
+}
+
+// cpuSample is the part of a /proc/stat sample that statsRing keeps.
+// linuxproc.Stat is not kept because its cpu Ids are substrings of the whole
+// file text, so every kept Stat would keep a copy of /proc/stat alive.
+type cpuSample struct {
+	allId  string     // Id of the aggregate cpu line
+	all    cpuTicks   // counters of the aggregate cpu line
+	cpuIds []string   // Ids of the per-cpu lines, shared with the previous sample while unchanged
+	cpus   []cpuTicks // counters of the per-cpu lines
 }
 
 // SonicVersionInfo is a data model to serialize '/etc/sonic/sonic_version.yml'
@@ -131,11 +149,48 @@ type cpuUtil struct {
 	CpuUtil_5min  uint64 `json:"5min"`
 }
 
-func getCpuUtilPercents(cur, last *linuxproc.CPUStat) uint64 {
-	curTotal := (cur.User + cur.Nice + cur.System + cur.Idle + cur.IOWait + cur.IRQ + cur.SoftIRQ + cur.Steal)
-	lastTotal := (last.User + last.Nice + last.System + last.Idle + last.IOWait + last.IRQ + last.SoftIRQ + last.Steal)
-	idleTicks := cur.Idle - last.Idle
-	totalTicks := curTotal - lastTotal
+func newCpuTicks(s *linuxproc.CPUStat) cpuTicks {
+	return cpuTicks{
+		total: s.User + s.Nice + s.System + s.Idle + s.IOWait + s.IRQ + s.SoftIRQ + s.Steal,
+		idle:  s.Idle,
+	}
+}
+
+// newCpuSample copies the cpu counters of stat. The Ids are copied too, or
+// shared with prev when they have not changed, so that the sample does not
+// keep the /proc/stat text alive.
+func newCpuSample(stat *linuxproc.Stat, prev *cpuSample) *cpuSample {
+	if stat == nil {
+		return nil
+	}
+	sample := &cpuSample{
+		all:  newCpuTicks(&stat.CPUStatAll),
+		cpus: make([]cpuTicks, len(stat.CPUStats)),
+	}
+	if prev != nil && prev.allId == stat.CPUStatAll.Id {
+		sample.allId = prev.allId
+	} else {
+		sample.allId = strings.Clone(stat.CPUStatAll.Id)
+	}
+	sameIds := prev != nil && len(prev.cpuIds) == len(stat.CPUStats)
+	for i := range stat.CPUStats {
+		sample.cpus[i] = newCpuTicks(&stat.CPUStats[i])
+		sameIds = sameIds && prev.cpuIds[i] == stat.CPUStats[i].Id
+	}
+	if sameIds {
+		sample.cpuIds = prev.cpuIds
+	} else {
+		sample.cpuIds = make([]string, len(stat.CPUStats))
+		for i := range stat.CPUStats {
+			sample.cpuIds[i] = strings.Clone(stat.CPUStats[i].Id)
+		}
+	}
+	return sample
+}
+
+func getCpuUtilPercents(cur, last cpuTicks) uint64 {
+	idleTicks := cur.idle - last.idle
+	totalTicks := cur.total - last.total
 	if totalTicks == 0 { // No change in CPU Utilization
 		return 0
 	}
@@ -155,15 +210,15 @@ func getCpuUtilStat() *cpuStat {
 		return &stat
 	}
 
-	curCpuStat := statsR.buff[current].CPUStatAll
-	lastCpuStat := statsR.buff[last].CPUStatAll
+	curCpuStat := statsR.buff[current].all
+	lastCpuStat := statsR.buff[last].all
 
-	CpuUtil_100ms := getCpuUtilPercents(&curCpuStat, &lastCpuStat)
-	stat.CpuUsageAll.Id = curCpuStat.Id
+	CpuUtil_100ms := getCpuUtilPercents(curCpuStat, lastCpuStat)
+	stat.CpuUsageAll.Id = statsR.buff[current].allId
 	stat.CpuUsageAll.CpuUtil_100ms = CpuUtil_100ms
-	for i, cStat := range statsR.buff[last].CPUStats {
-		CpuUtil_100ms = getCpuUtilPercents(&statsR.buff[current].CPUStats[i], &cStat)
-		stat.CpuUsage = append(stat.CpuUsage, cpuUtil{Id: cStat.Id, CpuUtil_100ms: CpuUtil_100ms})
+	for i, cStat := range statsR.buff[last].cpus {
+		CpuUtil_100ms = getCpuUtilPercents(statsR.buff[current].cpus[i], cStat)
+		stat.CpuUsage = append(stat.CpuUsage, cpuUtil{Id: statsR.buff[last].cpuIds[i], CpuUtil_100ms: CpuUtil_100ms})
 	}
 
 	// Get cpu utilization rate within last 1s (10*100ms)
@@ -171,11 +226,11 @@ func getCpuUtilStat() *cpuStat {
 	if statsR.buff[last] == nil {
 		return &stat
 	}
-	lastCpuStat = statsR.buff[last].CPUStatAll
-	CpuUtil_1s := getCpuUtilPercents(&curCpuStat, &lastCpuStat)
+	lastCpuStat = statsR.buff[last].all
+	CpuUtil_1s := getCpuUtilPercents(curCpuStat, lastCpuStat)
 	stat.CpuUsageAll.CpuUtil_1s = CpuUtil_1s
-	for i, cStat := range statsR.buff[last].CPUStats {
-		CpuUtil_1s = getCpuUtilPercents(&statsR.buff[current].CPUStats[i], &cStat)
+	for i, cStat := range statsR.buff[last].cpus {
+		CpuUtil_1s = getCpuUtilPercents(statsR.buff[current].cpus[i], cStat)
 		stat.CpuUsage[i].CpuUtil_1s = CpuUtil_1s
 	}
 
@@ -184,11 +239,11 @@ func getCpuUtilStat() *cpuStat {
 	if statsR.buff[last] == nil {
 		return &stat
 	}
-	lastCpuStat = statsR.buff[last].CPUStatAll
-	CpuUtil_5s := getCpuUtilPercents(&curCpuStat, &lastCpuStat)
+	lastCpuStat = statsR.buff[last].all
+	CpuUtil_5s := getCpuUtilPercents(curCpuStat, lastCpuStat)
 	stat.CpuUsageAll.CpuUtil_5s = CpuUtil_5s
-	for i, cStat := range statsR.buff[last].CPUStats {
-		CpuUtil_5s = getCpuUtilPercents(&statsR.buff[current].CPUStats[i], &cStat)
+	for i, cStat := range statsR.buff[last].cpus {
+		CpuUtil_5s = getCpuUtilPercents(statsR.buff[current].cpus[i], cStat)
 		stat.CpuUsage[i].CpuUtil_5s = CpuUtil_5s
 	}
 
@@ -197,11 +252,11 @@ func getCpuUtilStat() *cpuStat {
 	if statsR.buff[last] == nil {
 		return &stat
 	}
-	lastCpuStat = statsR.buff[last].CPUStatAll
-	CpuUtil_1min := getCpuUtilPercents(&curCpuStat, &lastCpuStat)
+	lastCpuStat = statsR.buff[last].all
+	CpuUtil_1min := getCpuUtilPercents(curCpuStat, lastCpuStat)
 	stat.CpuUsageAll.CpuUtil_1min = CpuUtil_1min
-	for i, cStat := range statsR.buff[last].CPUStats {
-		CpuUtil_1min = getCpuUtilPercents(&statsR.buff[current].CPUStats[i], &cStat)
+	for i, cStat := range statsR.buff[last].cpus {
+		CpuUtil_1min = getCpuUtilPercents(statsR.buff[current].cpus[i], cStat)
 		stat.CpuUsage[i].CpuUtil_1min = CpuUtil_1min
 	}
 
@@ -210,11 +265,11 @@ func getCpuUtilStat() *cpuStat {
 	if statsR.buff[last] == nil {
 		return &stat
 	}
-	lastCpuStat = statsR.buff[last].CPUStatAll
-	CpuUtil_5min := getCpuUtilPercents(&curCpuStat, &lastCpuStat)
+	lastCpuStat = statsR.buff[last].all
+	CpuUtil_5min := getCpuUtilPercents(curCpuStat, lastCpuStat)
 	stat.CpuUsageAll.CpuUtil_5min = CpuUtil_5min
-	for i, cStat := range statsR.buff[last].CPUStats {
-		CpuUtil_5min = getCpuUtilPercents(&statsR.buff[current].CPUStats[i], &cStat)
+	for i, cStat := range statsR.buff[last].cpus {
+		CpuUtil_5min = getCpuUtilPercents(statsR.buff[current].cpus[i], cStat)
 		stat.CpuUsage[i].CpuUtil_5min = CpuUtil_5min
 	}
 	return &stat
@@ -337,7 +392,8 @@ func getBuildVersion() ([]byte, error) {
 
 func WriteStatsToBuffer(stat *linuxproc.Stat) {
 	statsR.mu.Lock()
-	statsR.buff[statsR.writeIdx] = stat
+	prev := statsR.buff[(statsR.writeIdx+statsRingCap-1)%statsRingCap]
+	statsR.buff[statsR.writeIdx] = newCpuSample(stat, prev)
 	statsR.writeIdx++
 	statsR.writeIdx %= statsRingCap
 	statsR.mu.Unlock()
@@ -360,7 +416,7 @@ func PollStats() {
 func init() {
 	clientTrie = NewTrie()
 	clientTrie.clientTriePopulate()
-	statsR.buff = make([]*linuxproc.Stat, statsRingCap)
+	statsR.buff = make([]*cpuSample, statsRingCap)
 	go PollStats()
 }
 
